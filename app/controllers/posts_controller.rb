@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+  before_action :set_skill, only: :create, if: :skill?
+  before_action :set_role, only: :create, if: :role?
+
   def new
     @post = Post.new
   end
@@ -6,11 +9,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user = current_user
-    @skills = Skills.all
-    @roles = Roles.all
-
-    # Need to add whether this is a role or skill
-
+    @post.postable = @postable
     if @post.save
       redirect_to post_path(@post)
     else
@@ -20,7 +19,23 @@ class PostsController < ApplicationController
 
   private
 
+  def role?
+    params[:tag][:postableSkills].empty?
+  end
+
+  def skill?
+    params[:tag][:postableRoles].empty?
+  end
+
+  def set_skill
+    @postable = Skill.find(params[:tag][:postableSkills])
+  end
+
+  def set_role
+    @postable = Role.find(params[:tag][:postableRoles])
+  end
+
   def post_params
-    params.require(:post).permit(:title, :blurb, :content, :postable)
+    params.require(:post).permit(:title, :blurb, :content)
   end
 end
