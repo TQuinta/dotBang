@@ -6,6 +6,8 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user = current_user
+    @skills = Skills.all
+    @roles = Roles.all
 
     # Need to add whether this is a role or skill
 

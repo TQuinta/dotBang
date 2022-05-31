@@ -3,4 +3,6 @@ class Post < ApplicationRecord
   belongs_to :postable, polymorphic: true
 
   validates :title, :blurb, :content, presence: true
+
+  CATEGORIES = ["Roles", "Skills"]
 end
