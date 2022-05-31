@@ -22,3 +22,34 @@ require 'faker'
 
   user.save!
 end
+
+skill = Skill.new(name: "Javascript")
+skill.save!
+
+skill = Skill.new(name: "Ruby")
+skill.save!
+
+skill = Skill.new(name: "CSS")
+skill.save!
+
+skill = Skill.new(name: "React")
+skill.save!
+
+role = Role.new(name: "Frontend")
+role.save!
+
+role = Role.new(name: "Backend")
+role.save!
+
+role = Role.new(name: "freelance")
+role.save!
+
+role = Role.new(name: "Full-stack")
+role.save!
+
+post = Post.new(skill.all.sample)
+post.save!
+
+# user.save!
+# puts "Created #{user.first_name}"
+# post = skill.all.sample
