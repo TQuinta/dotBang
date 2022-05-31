@@ -11,6 +11,11 @@ require 'faker'
 # seeds for users, skills, roles
 # then make posts
 
+Post.destroy_all
+Skill.destroy_all
+Role.destroy_all
+User.destroy_all
+
 10.times do
   user = User.new(
     first_name: Faker::Name.first_name,
@@ -21,4 +26,52 @@ require 'faker'
   )
 
   user.save!
+  puts "#{user.first_name} created"
+end
+
+skill = Skill.new(name: "Javascript")
+skill.save!
+puts "#{skill.name} created"
+
+skill = Skill.new(name: "Ruby")
+skill.save!
+puts "#{skill.name} created"
+
+skill = Skill.new(name: "CSS")
+skill.save!
+puts "#{skill.name} created"
+
+skill = Skill.new(name: "React")
+skill.save!
+puts "#{skill.name} created"
+
+role = Role.new(name: "Frontend")
+role.save!
+puts "#{role.name} created"
+
+role = Role.new(name: "Backend")
+role.save!
+puts "#{role.name} created"
+
+role = Role.new(name: "freelance")
+role.save!
+puts "#{role.name} created"
+
+role = Role.new(name: "Full-stack")
+role.save!
+puts "#{role.name} created"
+
+5.times do
+  users = User.all
+  tags = Role.all + Skill.all
+  post = Post.new(
+    title: Faker::Book.title,
+    blurb: Faker::Quote.yoda,
+    content: Faker::Movie.title,
+    rating: rand(0...5),
+    postable: tags.sample,
+    user: users.sample
+  )
+  post.save!
+  puts "#{post.title} created"
 end
