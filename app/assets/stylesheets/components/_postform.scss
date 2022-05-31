@@ -1,0 +1,51 @@
+.tag-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.tag-item {
+  flex: 0 0 30%;
+}
+
+.tag-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.tag-selector + label {
+  display: block;
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 12px;
+  text-align: left;
+  padding: 10px 10px 30px 10px;
+  border: 1px solid #EAEAEA;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.tag-selector:checked + label {
+  color: white !important;
+}
+
+
+#tag_tag_roles + label {
+  color: #E9C46A;
+}
+
+#tag_tag_roles:checked + label {
+  background-color: #E9C46A;
+  border-color: #E9C46A;
+}
+
+
+#tag_tag_skills + label {
+  color: #42798F;
+}
+
+#tag_tag_skills:checked + label {
+  background-color: #42798F;
+  border-color: #42798F;
+}
