@@ -1,0 +1,13 @@
+<div class="create">
+
+<h1>New Profile</h1>
+  <h2>Create your own developer profile!</h2>
+  <%= simple_form_for(@profile) do |f| %>
+  <%= f.input :description %>
+  <%= f.input :credentials %>
+  <%= f.input :years_of_experience %>
+  <%= f.input :city %>
+  <%= f.input :current_role %>
+  <%= f.submit "Submit", class: "btn btn-primary", id:"profile" %>
+<% end %>
+</div>
