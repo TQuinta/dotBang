@@ -1,1 +1,153 @@
 // Specific CSS for your home-page
+html {
+  height:100%;
+}
+
+body {
+  margin:0;
+  background-image: url("https://wallpaperaccess.com/full/1567666.png");
+  background-size: cover ;
+  transition: all 2s;
+}
+
+.bg {
+  animation:slide 8s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #E9C46A 50%, #42798F 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.1;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:9s;
+}
+
+.bg3 {
+  animation-duration:10s;
+}
+
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
+// actual css
+.container {
+  margin-left: 20px;
+}
+.content {
+  display:flex;
+}
+h1, h2, a {
+  color: #F3F3F3;
+}
+h1, h2 {
+  text-shadow: 1px 1px 4px #292828;
+}
+h1 {
+  font-size: 80px;
+  margin-bottom: 10px;
+}
+h2 {
+  font-size: 29px;
+}
+p {
+  color: #F3F3F3;
+  text-shadow: 1px 1px 4px #292828
+}
+
+a {
+  text-decoration: none;
+  font-size: 38px;
+  text-shadow: 1px 1px 4px #292828;
+  border-radius: 5px;
+  transform: skew(-20deg);
+
+  &:hover {
+    text-shadow: 1px 1px 6px white;
+    color: #F3F3F3;
+  }
+}
+.info-none {
+  display: none;
+}
+.info {
+  position: relative;
+    /* margin-top: 8rem; */
+  background-color: #77633170;
+  width: 286px;
+  margin-left: 84px;
+  box-shadow: #77633170;
+  border-left: 3px solid #74b2e0;
+  border-right: 3px solid #74b2e0;
+  padding: 45px;
+  top: -117px;
+  height: 110vh;
+}
+.title {
+  margin: 4rem;
+  margin-top: 8rem;
+  margin-bottom: 11rem;
+  margin-left: 8rem;
+}
+
+.buttons {
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  width: 50rem;
+  margin-left: 57px;
+}
+
+#roles {
+  padding:100px;
+  transition:0.3s all;
+  border-top: 3px solid #74b2e0;
+  border-left: 3px solid #74b2e0;
+  transition: all 2s;
+  &:hover {
+    border: 3px solid #74b2e0;
+  }
+}
+
+#skills {
+  padding:100px;
+  border-bottom: 3px solid #74b2e0;
+  border-right: 3px solid #74b2e0;
+  transition: all 2s;
+  &:hover {
+    border: 3px solid #74b2e0;
+  }
+}
+
+.navbar {
+  color: #F3F3F3;
+  p {
+    margin: 4rem 0 0 10rem;
+    font-size: 20px;
+  }
+}
+.yellow-background {
+  background-image: url("yellow.png");
+  background-size: cover;
+  transition: all 2s;
+}
+.blue-background {
+  background-image: url("blue.png");
+  background-size: cover;
+  transition: all 2s;
+}
+
+.skew-fix {
+  display:inline-block;
+  transform: skew(20deg);
+}
