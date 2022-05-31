@@ -11,22 +11,18 @@
                   input_html: {class: 'tag-selector', data: { action:"click->select-category#showDropdown" }},
                   collection: Post::CATEGORIES %>
       <% end %>
-
-      <%= f.input :postable,
-                  data: { select_category_target: 'skills-input' },
-                  input_html: {class: 'd-none'} %>
-      <%= f.input :postable,
-                  data: { select_category_target: 'roles-input' },
-                  input_html: {class: 'd-none'} %>
+      <div class="d-none" data-select-category-target="skills">
+        <%= f.input :postable,
+                    label:"Skills",
+                    collection: Skill.all
+        %>
+      </div>
+      <div class="d-none" data-select-category-target="roles">
+        <%= f.input :postable,
+                    label:"Roles",
+                    collection: Role.all
+        %>
+      </div>
     <% end %>
   </div>
 </div>
-
-
-<%# <%= f.input :postable_type,
-            as: :radio_buttons,
-            collection_wrapper_tag: 'div',
-            collection_wrapper_class: 'category-wrapper',
-            item_wrapper_class: 'category-item',
-            input_html: {class: 'category-selector'},
-            collection: Post::CATEGORIES %>
