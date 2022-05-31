@@ -47,9 +47,9 @@ role.save!
 role = Role.new(name: "Full-stack")
 role.save!
 
-post = Post.new(skill.all.sample)
+post = Post.new(
+  title: title,
+  blurb: blurb,
+  content: content,
+  rating: rating)
 post.save!
-
-# user.save!
-# puts "Created #{user.first_name}"
-# post = skill.all.sample
