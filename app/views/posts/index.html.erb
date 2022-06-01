@@ -1,0 +1,38 @@
+<div class='container'>
+  <div data-controller="select-category">
+
+      <%= simple_fields_for :tag do |n| %>
+      <%= n.input :tag,
+                  as: :radio_buttons,
+                  collection_wrapper_tag: 'div',
+                  collection_wrapper_class: 'tag-wrapper',
+                  item_wrapper_class: 'tag-item',
+                  input_html: {class: 'tag-selector', data: { action:"click->select-category#showDropdown" }},
+                  collection: Post::CATEGORIES %>
+
+      <div class="d-none" data-select-category-target="roles">
+        <%= n.input :postableRoles,
+                    collection_wrapper_tag: 'div',
+                    collection_wrapper_class: 'tag-wrapper',
+                    item_wrapper_class: 'tag-item-2',
+                    input_html: {class: "tag-selector-roles"},
+                    label:"Roles",
+                    collection: Role.all,
+                    as: :check_boxes
+        %>
+      </div>
+
+      <div class="d-none" data-select-category-target="skills">
+        <%= n.input :postableSkills,
+                    collection_wrapper_tag: 'div',
+                    collection_wrapper_class: 'tag-wrapper',
+                    item_wrapper_class: 'tag-item-2',
+                    input_html: {class: "tag-selector-skills"},
+                    label:"Skills",
+                    collection: Skill.all,
+                    as: :check_boxes
+        %>
+      </div>
+      <% end %>
+  </div>
+</div>

@@ -49,3 +49,56 @@
   background-color: #42798F;
   border-color: #42798F;
 }
+
+.tag-item-2 {
+  flex: 0 0 20%;
+  display: inline-block;
+}
+
+.tag-selector-roles {
+  position: absolute;
+  transform: scale(0);
+}
+
+.tag-selector-roles + label {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1rem;
+  border-radius: 2rem;
+  padding: 3rem  3rem;
+  background-color: #fffefb;
+  color: #E9C46A;
+  border: 1px solid #E9C46A;
+  margin-right: 0.6rem;
+  margin-bottom: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.tag-selector-roles:hover + label {
+  background-color: #E9C46A;
+  color: white;
+}
+
+.tag-selector-skills {
+  position: absolute;
+  transform: scale(0);
+}
+
+.tag-selector-skills + label {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1rem;
+  border-radius: 2rem;
+  padding: 3rem  3rem;
+  background-color: #fffefb;
+  color: #42798F;
+  border: 1px solid #42798F;
+  margin-right: 0.6rem;
+  margin-bottom: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.tag-selector-skills:hover + label {
+  background-color: #42798F;
+  color: white;
+}
