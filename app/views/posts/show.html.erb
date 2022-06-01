@@ -1,0 +1,7 @@
+
+<tr>
+  <td><%= @post.title %></td>
+  <td><%= @post.blurb %></td>
+  <td><%= pluralize(@post.rating, "vote") %></td>
+  <td><%= button_to "upvote", action: "upvote", method: :post %></td>
+</tr>
