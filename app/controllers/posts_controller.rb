@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:new]
   before_action :set_skill, only: :create, if: :skill?
   before_action :set_role, only: :create, if: :role?
 
