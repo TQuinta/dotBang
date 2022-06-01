@@ -32,7 +32,7 @@ class PostsController < ApplicationController
     end
     respond_to do |format|
       format.html { redirect_to post_path(@post) }
-      format.json { render json: { votes: helpers.pluralize(@post.votes.count, "vote"), link_html: render  } }
+      format.json { render json: { votes: helpers.pluralize(@post.votes.count, "vote") } }
     end
   end
 
