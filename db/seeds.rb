@@ -11,10 +11,10 @@ require 'faker'
 # seeds for users, skills, roles
 # then make posts
 
-Post.destroy_all
+User.destroy_all
 Skill.destroy_all
 Role.destroy_all
-User.destroy_all
+Post.destroy_all
 
 10.times do
   user = User.new(
