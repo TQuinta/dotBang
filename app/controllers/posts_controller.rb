@@ -24,13 +24,16 @@ class PostsController < ApplicationController
     @votes = @post.votes
     @vote = @votes.find { |vote| vote.user == current_user }
     if author?
-      "not possible"
+      flash[:alert] = 'Cannot vote on your own post!'
     elsif @vote
-      add_votes
-    else
       remove_votes
+    else
+      add_votes
     end
-    redirect_to post_path(@post)
+    respond_to do |format|
+      format.html { redirect_to post_path(@post) }
+      format.json { render json: { votes: helpers.pluralize(@post.votes.count, "vote"), link_html: render  } }
+    end
   end
 
   private
@@ -63,13 +66,13 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  def add_votes
+  def remove_votes
     @post.rating -= 1
     @post.save
     @vote.destroy
   end
 
-  def remove_votes
+  def add_votes
     @post.rating += 1
     @post.save
     Vote.create(user: current_user, post: @post)

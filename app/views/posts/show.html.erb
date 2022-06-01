@@ -1,7 +1,14 @@
-
-<tr>
-  <td><%= @post.title %></td>
-  <td><%= @post.blurb %></td>
-  <td><%= pluralize(@post.rating, "vote") %></td>
-  <td><%= button_to "upvote", action: "upvote", method: :post %></td>
-</tr>
+<div data-controller="post-upvote">
+<%= @post.title %>
+<%= @post.blurb %>
+<div data-post-upvote-target="count">
+  <%= pluralize(@post.rating, "vote") %>
+</div>
+  <%= button_to "upvote", { action: "upvote" }, method: :patch,
+      form: {
+        data: {
+        post_upvote_target: "button",
+        action: "submit->post-upvote#toggle"
+        }
+      } %>
+</div>
