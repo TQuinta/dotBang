@@ -10,18 +10,33 @@
                   item_wrapper_class: 'tag-item',
                   input_html: {class: 'tag-selector', data: { action:"click->select-category#showDropdown" }},
                   collection: Post::CATEGORIES %>
-      <% end %>
       <div class="d-none" data-select-category-target="skills">
-        <%= f.input :postable,
+        <%= n.input :postableSkills,
                     label:"Skills",
-                    collection: Skill.all
+                    collection: Skill.all,
+                    as: :select
         %>
       </div>
       <div class="d-none" data-select-category-target="roles">
-        <%= f.input :postable,
+        <%= n.input :postableRoles,
                     label:"Roles",
-                    collection: Role.all
+                    collection: Role.all,
+                    as: :select
         %>
+      </div>
+      <% end %>
+
+      <div class="post-title" data-select-category-target="roles">
+        <%= f.input :title, label:"Title of your article"%>
+      </div>
+      <div class="post-blurb" data-select-category-target="roles">
+        <%= f.input :blurb, label:"Interesting headline to captivate users"%>
+      </div>
+      <div class="post-content" data-select-category-target="roles">
+        <%= f.input :content, label:"Your article goes here!"%>
+      </div>
+      <div class="post-submit">
+        <%= f.submit %>
       </div>
     <% end %>
   </div>
