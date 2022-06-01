@@ -7,8 +7,8 @@ body {
   margin:0;
   background-image: url("https://wallpaperaccess.com/full/1567666.png");
   background-size: cover ;
-  transition: all 2s;
 }
+
 
 .bg {
   animation:slide 8s ease-in-out infinite alternate;
@@ -47,10 +47,10 @@ body {
 .content {
   display:flex;
 }
-h1, h2, a {
+h1, h2, a, h3 {
   color: #F3F3F3;
 }
-h1, h2 {
+h1, h2, h3 {
   text-shadow: 1px 1px 4px #292828;
 }
 h1 {
@@ -62,70 +62,74 @@ h2 {
 }
 p {
   color: #F3F3F3;
-  text-shadow: 1px 1px 4px #292828
+  text-shadow: 1px 1px 4px #292828;
+  font-size: 20px;
 }
 
-a {
+.big {
   text-decoration: none;
   font-size: 38px;
   text-shadow: 1px 1px 4px #292828;
   border-radius: 5px;
   transform: skew(-20deg);
-
+  backdrop-filter: blur(10px);
+  background-color: rgba(255,255,255,0.06);
   &:hover {
     text-shadow: 1px 1px 6px white;
     color: #F3F3F3;
   }
 }
-.info-none {
-  display: none;
+
+.info-box {
+  background-color: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  text-shadow: 1px 1px 4px #292828;
+  transform: skew(-20deg);
+  border-bottom: 4px solid #74b2e0;
+  border: 4px solid #74b2e0;
+  width: 800px;
+  padding: 43px;
+  text-align: center;
+  transition:all 0.5s;
+  &:hover {
+    backdrop-filter: blur(72px);
+  }
 }
-.info {
-  position: relative;
-    /* margin-top: 8rem; */
-  background-color: #77633170;
-  width: 286px;
-  margin-left: 84px;
-  box-shadow: #77633170;
-  border-left: 3px solid #74b2e0;
-  border-right: 3px solid #74b2e0;
-  padding: 45px;
-  top: -117px;
-  height: 110vh;
-}
+
 .title {
   margin: 4rem;
-  margin-top: 8rem;
-  margin-bottom: 11rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
   margin-left: 8rem;
 }
 
 .buttons {
-  text-align: center;
   display: flex;
   justify-content: space-evenly;
   width: 50rem;
-  margin-left: 57px;
+  margin-left: 27px;
 }
 
 #roles {
   padding:100px;
   transition:0.3s all;
-  border-top: 3px solid #74b2e0;
-  border-left: 3px solid #74b2e0;
-  transition: all 2s;
+  border-top: 4px solid #74b2e0;
+  border-left: 4px solid #74b2e0;
+  transition: all 1s;
   &:hover {
-    border: 3px solid #74b2e0;
+    border: 4px solid #74b2e0;
+    backdrop-filter: blur(72px);
   }
 }
 
 #skills {
   padding:100px;
-  border-bottom: 3px solid #74b2e0;
-  border-right: 3px solid #74b2e0;
-  transition: all 2s;
+  border-bottom: 4px solid #74b2e0;
+  border-right: 4px solid #74b2e0;
+  transition: all 1s;
   &:hover {
-    border: 3px solid #74b2e0;
+    border: 4px solid #74b2e0;
+    backdrop-filter: blur(72px);
   }
 }
 
@@ -139,15 +143,62 @@ a {
 .yellow-background {
   background-image: url("yellow.png");
   background-size: cover;
-  transition: all 2s;
+  transition: all 0.6s;
 }
 .blue-background {
   background-image: url("blue.png");
   background-size: cover;
-  transition: all 2s;
+  transition: all 0.6s;
 }
 
 .skew-fix {
   display:inline-block;
   transform: skew(20deg);
+}
+
+.flex {
+  display: flex;
+  width: 100vh;
+  height: 100vh;
+  align-items: center;
+  margin: 0 auto;
+
+}
+h3 {
+  font-size: 36px;
+  margin-bottom: 19px;
+
+}
+.arrow-up {
+  border: solid #F3F3F3;
+  border-width: 0 10px 10px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-137deg);
+  padding: 15px;
+  position: absolute;
+  top: -7rem;
+  left: 19rem;
+  box-shadow: 1px 1px 4px #292828;
+  box-shadow: 4px 4px 3px 0 #74b2e0;
+}
+.skills-btn-small {
+  position: absolute;
+  top: -7rem;
+  left: -8rem;
+  border-bottom: 4px solid #74b2e0;
+  border-right: 4px solid #74b2e0;
+  font-size:20px;
+  padding:10px;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.06);
+}
+@media screen and (min-width: 1350px) {
+  .title {
+    margin: 4rem;
+    margin-top: 7rem;
+    margin-bottom: 10rem;
+    margin-left: 8rem;
+  }
 }
