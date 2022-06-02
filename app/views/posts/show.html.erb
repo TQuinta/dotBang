@@ -2,56 +2,10 @@
 
 <div class="show-container">
 
-  <div class="left-column">
-    <div class="icon-container">
-      <div id="bookmark" class="btn btn-primary">
-        <i class="far fa-bookmark"></i>
-      </div>
-      <div id="chat"class="btn btn-primary">
-        <i class="far fa-comment-alt"></i>
-      </div>
-      <div id="comment"class="btn btn-primary">
-        <i class="far fa-edit"></i>
-      </div>
-    </div>
-  </div>
+  <%= render "sidebar" %>
 
-  <div class="mid-column">
-    <div class="author-top-middle-column">
-      <div id="author-avatar-top-left">Author Avatar, Author Name-to be done</div>
-      <div id="icons-top-right">
-        <div class="btn btn-primary">
-          <i class="fas fa-exclamation"></i>
-          <div data-controller="post-upvote">
-            <div data-post-upvote-target="count">
-              <%= pluralize(@post.votes.count, "vote") %>
-            </div>
-              <%= render "upvote" %>
-          </div>
-        </div>
-        <div class="btn btn-primary">
-          <i class="far fa-comment-alt"></i>
-        </div>
-        <div class="btn btn-primary">
-          <i class="far fa-bookmark"></i>
-        </div>
-      </div>
-    </div>
-    <div class="mid-column-content">
-      <div>
-        <h1><%= @post.title %></h1>
-        <h2><%= @post.blurb %></h2>
-        <p><%= @post.postable_type %></p>
-      </div>
-      <div>
-        <p><%= @post.content %></p>
-      </div>
-    </div>
-  </div>
+  <%= render "post" %>
 
-  <div class="right-column">
-    <div class="author-card">
-      author profile
-    </div>
-  </div>
+  <%= render "author_infos" %>
+
 </div>
