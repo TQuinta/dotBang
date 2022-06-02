@@ -1,23 +1,9 @@
 <div class="mid-column">
     <div class="author-top-middle-column">
-      <div id="author-avatar-top-left">Author Avatar, Author Name-to be done</div>
-      <div id="icons-top-right">
-        <div class="btn btn-primary">
-          <i class="fas fa-exclamation"></i>
-          <div data-controller="post-upvote">
-            <div data-post-upvote-target="count">
-              <%= pluralize(@post.votes.count, "vote") %>
-            </div>
-              <%= render "upvote" %>
-          </div>
-        </div>
-        <div class="btn btn-primary">
-          <i class="far fa-comment-alt"></i>
-        </div>
-        <div class="btn btn-primary">
-          <i class="far fa-bookmark"></i>
-        </div>
-      </div>
+      <%= render "author_avatar" %>
+
+      <%= render "post_icons" %>
+
     </div>
     <div class="mid-column-content">
       <div>

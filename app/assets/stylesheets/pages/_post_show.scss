@@ -43,9 +43,24 @@
   margin-top: 150px;
 }
 
-#icons-top-right {
-  margin-left: 550px;
-}
 
-#author-avatar-top-left {
+.mid-column-content {
+  h1 {
+    color: black;
+    font-size: 40px;
+    margin-left: 20px;
+  }
+
+  h2 {
+    color: black;
+    font-size: 30px;
+    margin-left: 20px;
+  }
+
+  p {
+    color: black;
+    font-size: 15px;
+    margin-left: 20px;
+  }
+
 }
