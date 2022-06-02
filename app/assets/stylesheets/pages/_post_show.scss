@@ -3,22 +3,16 @@
   align-items: stretch;
   justify-content: space-evenly;
   position: relative;
-  height: 100vh;
+  height: calc(100vh - 66px);
 }
 
-// all flex items
 .left-column {
-  background-color: rgb(195, 0, 255);
-  //align-items: center;
+  background-color: #f3f3f3;
   position: relative;
-  width: 200px;
-}
+  display: flex;
+  align-items: center;
+  align-content: center;
 
-.far{
-  font-size: 25px;
-  text-align: center;
-  margin-left: 100px;
-  justify-content: center;
 }
 
 .mid-column {
@@ -26,7 +20,7 @@
   background-color: rgb(154, 154, 201);
   align-items: stretch;
   position: relative;
-  width: 900px;
+  width: auto;
 }
 
 .right-column {
@@ -36,6 +30,7 @@
   position: relative;
   width: 300px;
 }
+
 .icon-container {
   height: 50%;
   display: grid;
