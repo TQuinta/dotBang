@@ -1,7 +1,7 @@
 .show-container {
   display: flex;
   align-items: stretch;
-  justify-content: space-evenly;
+  justify-content: space-between;
   position: relative;
   height: calc(100vh - 66px);
 }
@@ -12,6 +12,7 @@
   display: flex;
   align-items: center;
   align-content: center;
+  width: 50px;
 
 }
 
@@ -20,7 +21,7 @@
   background-color: rgb(154, 154, 201);
   align-items: stretch;
   position: relative;
-  width: auto;
+  flex: 1 0 auto;
 }
 
 .right-column {
@@ -37,7 +38,6 @@
   grid-template-rows: 1fr 1fr 1fr;
   margin-top: 150px;
 }
-
 
 .mid-column-content {
   h1 {
@@ -58,4 +58,9 @@
     margin-left: 20px;
   }
 
+}
+
+.author-top-middle-column {
+  display: flex;
+  justify-content: space-between;
 }

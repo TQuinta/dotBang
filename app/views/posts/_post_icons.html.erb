@@ -1,17 +1,17 @@
 <div id="icons-top-right">
   <div class="btn btn-primary">
-    <i class="fas fa-exclamation"></i>
-    <div data-controller="post-upvote">
+    <i class="exclamation fas fa-exclamation"></i>
+    <div class="exclamation" data-controller="post-upvote">
       <div data-post-upvote-target="count">
-        <%= pluralize(@post.votes.count, "vote") %>
+        <p class="count"><%= pluralize(@post.votes.count, "vote") %></p>
       </div>
         <%= render "upvote" %>
     </div>
   </div>
-  <div class="btn btn-primary">
+  <div class="comment btn btn-primary">
     <i class="far fa-comment-alt"></i>
   </div>
-  <div class="btn btn-primary">
+  <div class="bookmark btn btn-primary">
     <i class="far fa-bookmark"></i>
   </div>
 </div>
