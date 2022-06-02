@@ -8,6 +8,5 @@ Rails.application.routes.draw do
       patch :upvote
     end
   end
-
   resources :profiles, only: %i[new create]
 end
