@@ -24,13 +24,29 @@ export default class extends Controller {
     this.skillTarget.classList.remove("d-none")
     window.scrollTo(0, this.skillTarget.getBoundingClientRect().top + document.documentElement.scrollTop)
   }
-  reset(event) {
-    // event.preventDefault()
-    // this.infoTarget.classList.remove("info-roles")
-    // this.infoTarget.classList.add("info-roles-none")
+  goUp(event) {
+     event.preventDefault()
+     this.bodyTarget.parentElement.classList.remove("yellow-background")
+     this.bodyTarget.parentElement.classList.remove("blue-background")
     // this.flexTarget.classList.add("flex-none")
     // this.flexTarget.classList.remove("flex")
     // this.bodyTarget.classList.toggle("yellow-background")
-    window.scrollTo(0, document.documentElement.scrollTop)
+    console.log()
+    window.scrollTo(0, 0)
+  }
+  switchToSkills(event) {
+    event.preventDefault()
+    this.bodyTarget.parentElement.classList.remove("yellow-background")
+    this.bodyTarget.parentElement.classList.add("blue-background")
+    this.roleTarget.classList.add("d-none")
+    this.skillTarget.classList.remove("d-none")
+  }
+
+  switchToRoles(event) {
+    event.preventDefault()
+    this.bodyTarget.parentElement.classList.add("yellow-background")
+    this.bodyTarget.parentElement.classList.remove("blue-background")
+    this.skillTarget.classList.add("d-none")
+    this.roleTarget.classList.remove("d-none")
   }
 }

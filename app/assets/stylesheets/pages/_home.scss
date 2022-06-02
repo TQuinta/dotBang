@@ -65,7 +65,9 @@ p {
   text-shadow: 1px 1px 4px #292828;
   font-size: 20px;
 }
-
+a {
+  cursor: pointer;
+}
 .big {
   text-decoration: none;
   font-size: 38px;
@@ -90,10 +92,7 @@ p {
   width: 800px;
   padding: 43px;
   text-align: center;
-  transition:all 0.5s;
-  &:hover {
-    backdrop-filter: blur(72px);
-  }
+
 }
 
 .title {
@@ -112,24 +111,23 @@ p {
 
 #roles {
   padding:100px;
-  transition:0.3s all;
   border-top: 4px solid #74b2e0;
   border-left: 4px solid #74b2e0;
-  transition: all 1s;
+  border-bottom: 4px solid transparent;
+  border-right: 4px solid transparent;
   &:hover {
     border: 4px solid #74b2e0;
-    backdrop-filter: blur(72px);
   }
 }
 
 #skills {
   padding:100px;
+  border-top: 4px solid transparent;
+  border-left: 4px solid transparent;
   border-bottom: 4px solid #74b2e0;
   border-right: 4px solid #74b2e0;
-  transition: all 1s;
   &:hover {
     border: 4px solid #74b2e0;
-    backdrop-filter: blur(72px);
   }
 }
 
@@ -178,7 +176,7 @@ h3 {
   -webkit-transform: rotate(-137deg);
   padding: 15px;
   position: absolute;
-  top: -7rem;
+  top: -6rem;
   left: 19rem;
   box-shadow: 1px 1px 4px #292828;
   box-shadow: 4px 4px 3px 0 #74b2e0;
@@ -193,6 +191,23 @@ h3 {
   padding:10px;
   backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, 0.06);
+}
+.explore-more {
+  text-decoration: none;
+  font-size: 26px;
+  padding: 24px;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.06);
+  position: absolute;
+  top: 26rem;
+  left: 20rem;
+  border: 4px solid #74b2e0;
+  text-shadow: 1px 1px 4px #292828;
+}
+.skills-btn-small, .explore-more {
+  &:hover {
+    color:#F3F3F3;
+  }
 }
 @media screen and (min-width: 1350px) {
   .title {

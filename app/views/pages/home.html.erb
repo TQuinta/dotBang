@@ -9,7 +9,7 @@
     <div class="content">
       <div class="semi-content">
         <div class="title">
-          <h1>dot<strong>Bang</strong></h1>
+          <h1>dot<strong id="bang">Bang</strong></h1>
           <h2>Where you define your path, and make it happen</h2>
         </div>
         <div class="buttons">
@@ -22,8 +22,8 @@
   </div>
   <div class="d-none flex" data-home-scroll-target="role">
         <div class="info-box">
-          <a href="#" class="skills-btn-small"><span class="skew-fix">Skills</span></a>
-          <a href="#" class="arrow-up skew-fix" data-action="click->home-scroll#reset"></a>
+          <a href="#" class="skills-btn-small" data-action="click->home-scroll#switchToSkills"><span class="skew-fix">Skills</span></a>
+          <a href="#" class="arrow-up skew-fix" data-action="click->home-scroll#goUp"></a>
           <h3 class="skew-fix">Roles: </h3>
           <p class="skew-fix">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -32,13 +32,15 @@
             cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
             sunt in culpa qui officia deserunt mollit anim id est laborum.
           </p>
+          <a href="" class="explore-more"> Explore more</a>
         </div>
+
   </div>
 
   <div class="d-none flex" data-home-scroll-target="skill">
         <div class="info-box">
-          <a href="" class="skills-btn-small"><span class="skew-fix">Roles</span></a>
-          <a href="" class="arrow-up skew-fix" data-action="click->home-scroll#reset"></a>
+          <a href="" class="skills-btn-small" data-action="click->home-scroll#switchToRoles"><span class="skew-fix">Roles</span></a>
+          <a href="" class="arrow-up skew-fix" data-action="click->home-scroll#goUp"></a>
           <h3 class="skew-fix">Skills: </h3>
           <p class="skew-fix">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -47,6 +49,7 @@
             cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
             sunt in culpa qui officia deserunt mollit anim id est laborum.
           </p>
+          <a href="" class="explore-more"> Explore more</a>
         </div>
   </div>
 
