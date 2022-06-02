@@ -64,3 +64,13 @@
   display: flex;
   justify-content: space-between;
 }
+
+
+.count {
+  position: absolute;
+  bottom: -8px;
+  left: -8px;
+  p {
+    font-size: 12px;
+  }
+}

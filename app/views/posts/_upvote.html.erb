@@ -1,21 +1,17 @@
 <% if @vote %>
-  <%= button_to "remove vote",
-    { action: "upvote" },
-    method: :patch,
-        form: {
-          data: {
+  <%= button_to upvote_post_path(@post), method: :patch, form: { data: {
             post_upvote_target: "button",
             action: "submit->post-upvote#toggle"
           }
-        } %>
+        } do %>
+          <i class="icon bold-icon fas fa-exclamation"></i>
+        <% end %>
 <% else %>
-  <%= button_to "upvote",
-    { action: "upvote" },
-    method: :patch,
-        form: {
-          data: {
+  <%= button_to upvote_post_path(@post), method: :patch, form: { data: {
             post_upvote_target: "button",
             action: "submit->post-upvote#toggle"
           }
-        } %>
+        } do %>
+          <i class="icon fas fa-exclamation"></i>
+        <% end %>
 <% end %>
