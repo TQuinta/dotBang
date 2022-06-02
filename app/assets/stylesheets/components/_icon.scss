@@ -2,22 +2,34 @@
   flex-direction: column;
 }
 
+.upvote-button {
+  border: none;
+  outline: none;
+}
+
+.upvote-button:focus {
+  border: none;
+  outline: none;
+}
+
+.far{
+  font-size: 25px;
+  justify-content: center;
+  border: none;
+}
+
+.fas{
+  font-size: 25px;
+  justify-content: center;
+  border: none;
+}
+
 .sidebar-icon-container, #icons-top-right {
   display: flex;
   position: relative;
-
-  .far{
-    font-size: 25px;
-    justify-content: center;
-    border: none;
+  button:focus {
+    outline:none
   }
-
-  .fas{
-    font-size: 25px;
-    justify-content: center;
-    border: none;
-  }
-
   .icon {
     a {
       text-decoration: none;

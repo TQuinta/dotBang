@@ -1,6 +1,8 @@
 <div id="icons-top-right">
     <div data-controller="post-upvote">
-      <%= render "upvote" %>
+      <div class="upvote-button">
+        <%= render "upvote" %>
+      </div>
       <div class="count" data-post-upvote-target="count">
         <p count><%= pluralize(@post.votes.count, "vote") %></p>
       </div>

@@ -1,5 +1,5 @@
 <% if @vote %>
-  <%= button_to upvote_post_path(@post), method: :patch, form: { data: {
+  <%= button_to upvote_post_path(@post), method: :patch, class: "upvote-button", form: { data: {
             post_upvote_target: "button",
             action: "submit->post-upvote#toggle"
           }
@@ -7,7 +7,7 @@
           <i class="icon bold-icon fas fa-exclamation"></i>
         <% end %>
 <% else %>
-  <%= button_to upvote_post_path(@post), method: :patch, form: { data: {
+  <%= button_to upvote_post_path(@post), method: :patch, class: "upvote-button", form: { data: {
             post_upvote_target: "button",
             action: "submit->post-upvote#toggle"
           }
