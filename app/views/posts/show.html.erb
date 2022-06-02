@@ -1,0 +1,8 @@
+<div data-controller="post-upvote">
+<%= @post.title %>
+<%= @post.blurb %>
+<div data-post-upvote-target="count">
+  <%= pluralize(@post.votes.count, "vote") %>
+</div>
+  <%= render "upvote" %>
+</div>

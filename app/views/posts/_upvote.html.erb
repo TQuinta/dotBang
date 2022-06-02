@@ -1,0 +1,21 @@
+<% if @vote %>
+  <%= button_to "remove vote",
+    { action: "upvote" },
+    method: :patch,
+        form: {
+          data: {
+            post_upvote_target: "button",
+            action: "submit->post-upvote#toggle"
+          }
+        } %>
+<% else %>
+  <%= button_to "upvote",
+    { action: "upvote" },
+    method: :patch,
+        form: {
+          data: {
+            post_upvote_target: "button",
+            action: "submit->post-upvote#toggle"
+          }
+        } %>
+<% end %>
