@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:new, :index, :create]
+  skip_before_action :authenticate_user!, only: [:index]
   before_action :set_skill, only: :create, if: :skill? #before the 'create' method, call to 'set_skill' only if there is a skill
   before_action :set_role, only: :create, if: :role?
 
@@ -8,7 +8,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    raise
     @post = Post.new(post_params)
     @post.user = current_user
     @post.postable = @postable
@@ -20,6 +19,7 @@ class PostsController < ApplicationController
   end
 
   def index
+
   end
 
 

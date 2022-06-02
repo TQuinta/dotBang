@@ -11,6 +11,7 @@ require 'faker'
 # seeds for users, skills, roles
 # then make posts
 
+
 User.destroy_all
 Skill.destroy_all
 Role.destroy_all
