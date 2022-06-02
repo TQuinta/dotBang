@@ -1,8 +1,11 @@
-<div data-controller="post-upvote">
-<%= @post.title %>
-<%= @post.blurb %>
-<div data-post-upvote-target="count">
-  <%= pluralize(@post.votes.count, "vote") %>
-</div>
-  <%= render "upvote" %>
+<%= render "shared/navbar" %>
+
+<div class="show-container">
+
+  <%= render "sidebar" %>
+
+  <%= render "post" %>
+
+  <%= render "author_infos" %>
+
 </div>
