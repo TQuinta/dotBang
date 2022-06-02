@@ -131,11 +131,22 @@ a {
   }
 }
 
-.navbar {
+.navbar-home {
+  display: flex;
+  justify-content: space-between;
   color: #F3F3F3;
+  font-size: 20px;
   p {
     margin: 4rem 0 0 10rem;
-    font-size: 20px;
+  }
+  .login {
+    margin: 4rem 10rem 0 0;
+    #sign-up {
+      margin-left: 20px;
+    }
+    a:hover{
+      color: #74b2e0;
+    }
   }
 }
 .yellow-background {
