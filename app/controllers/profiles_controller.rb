@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   def new
-    profile = Profile.new
+    @profile = Profile.new
   end
 
   def create
@@ -18,5 +18,4 @@ class ProfilesController < ApplicationController
   def profile_params
     params.require(:profile).permit(:description, :credentials, :years_of_experience, :city, :current_role)
   end
-
 end
