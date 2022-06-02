@@ -4,8 +4,7 @@ export default class extends Controller {
   static targets = [ "button", "count" ]
 
   connect() {
-    console.log(this.buttonTarget)
-    console.log(this.buttonTarget.action)
+    console.log("Hello")
   }
 
   toggle(event) {
@@ -18,12 +17,17 @@ export default class extends Controller {
     })
       .then(response => response.json())
       .then((data) => {
+        console.log(data)
         this.updateVotes(data)
+        this.toggleButton(data)
       })
   }
 
   updateVotes(data) {
-    console.log(data.votes)
     this.countTarget.innerHTML = data.votes
+  }
+
+  toggleButton(data) {
+    this.buttonTarget.outerHTML = data.button_html
   }
 }

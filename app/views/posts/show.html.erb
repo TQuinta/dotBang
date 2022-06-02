@@ -2,13 +2,7 @@
 <%= @post.title %>
 <%= @post.blurb %>
 <div data-post-upvote-target="count">
-  <%= pluralize(@post.rating, "vote") %>
+  <%= pluralize(@post.votes.count, "vote") %>
 </div>
-  <%= button_to "upvote", { action: "upvote" }, method: :patch,
-      form: {
-        data: {
-        post_upvote_target: "button",
-        action: "submit->post-upvote#toggle"
-        }
-      } %>
+  <%= render "upvote" %>
 </div>
