@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_31_103924) do
+ActiveRecord::Schema.define(version: 2022_06_01_105035) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2022_05_31_103924) do
     t.string "title"
     t.text "blurb"
     t.string "content"
-    t.integer "rating"
+    t.integer "rating", default: 0
     t.bigint "user_id", null: false
     t.string "postable_type"
     t.bigint "postable_id"
@@ -81,8 +81,19 @@ ActiveRecord::Schema.define(version: 2022_05_31_103924) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "votes", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "post_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_votes_on_post_id"
+    t.index ["user_id"], name: "index_votes_on_user_id"
+  end
+
   add_foreign_key "bookmarks", "posts"
   add_foreign_key "bookmarks", "users"
   add_foreign_key "posts", "users"
   add_foreign_key "profiles", "users"
+  add_foreign_key "votes", "posts"
+  add_foreign_key "votes", "users"
 end

@@ -1,2 +1,60 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div data-controller="home-scroll" data-home-scroll-target="body">
+  <div class="bg"></div>
+  <div class="bg bg2"></div>
+  <div class="bg bg3"></div>
+  <div class="navbar-home">
+    <p> Welcome to dotBang!</p>
+    <div class="login">
+      <a href="">Login</a>
+      <a href="" id="sign-up">Sign up</a>
+    </div>
+  </div>
+  <div class="container">
+    <div class="content">
+      <div class="semi-content">
+        <div class="title">
+          <h1>dot<strong id="bang">Bang</strong></h1>
+          <h2>Where you define your path, and make it happen</h2>
+        </div>
+        <div class="buttons">
+          <a class="big" href="/" id="roles" data-action="click->home-scroll#roleScroll"><span class="skew-fix">Roles</span></a>
+          <a class="big" href="/" id="skills" data-action="click->home-scroll#skillScroll"><span class="skew-fix">Skills</span></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="d-none flex" data-home-scroll-target="role">
+        <div class="info-box">
+          <a href="#" class="skills-btn-small" data-action="click->home-scroll#switchToSkills"><span class="skew-fix">Skills</span></a>
+          <a href="#" class="arrow-up skew-fix" data-action="click->home-scroll#goUp"></a>
+          <h3 class="skew-fix">Roles: </h3>
+          <p class="skew-fix">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+            sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+          <a href="" class="explore-more"> Explore more</a>
+        </div>
+
+  </div>
+
+  <div class="d-none flex" data-home-scroll-target="skill">
+        <div class="info-box">
+          <a href="" class="skills-btn-small" data-action="click->home-scroll#switchToRoles"><span class="skew-fix">Roles</span></a>
+          <a href="" class="arrow-up skew-fix" data-action="click->home-scroll#goUp"></a>
+          <h3 class="skew-fix">Skills: </h3>
+          <p class="skew-fix">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+            sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+          <a href="" class="explore-more"> Explore more</a>
+        </div>
+  </div>
+
+</div>
