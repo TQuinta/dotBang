@@ -1,6 +1,10 @@
 class PostsController < ApplicationController
   before_action :set_skill, only: :create, if: :skill?
   before_action :set_role, only: :create, if: :role?
+  before_action :set_params, only: %i[upvote show]
+  before_action :set_vote, only: %i[show upvote]
+
+  def show; end
 
   def new
     @post = Post.new
@@ -17,11 +21,34 @@ class PostsController < ApplicationController
     end
   end
 
-  def show
-    @post = Post.find(params[:id])
+  def upvote
+    handle_vote
+    respond_to do |format|
+      format.html { redirect_to post_path(@post) }
+      format.json do
+        render json: {
+          votes: helpers.pluralize(@post.votes.count, "vote"),
+          button_html: render_to_string(partial: "posts/upvote", locals: { post: @post }, formats: [:html])
+        }
+      end
+    end
   end
 
   private
+
+  def set_vote
+    @vote = @post.votes.find_by(user: current_user)
+  end
+
+  def handle_vote
+    if author?
+      flash[:alert] = 'Cannot vote on your own post!'
+    elsif @vote
+      remove_votes
+    else
+      add_votes
+    end
+  end
 
   def role?
     params[:tag][:postableSkills].empty?
@@ -41,5 +68,22 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :blurb, :content)
+  end
+
+  def author?
+    current_user == @post.user
+  end
+
+  def set_params
+    @post = Post.find(params[:id])
+  end
+
+  def remove_votes
+    @vote.destroy
+    @vote = nil
+  end
+
+  def add_votes
+    @vote = Vote.create(user: current_user, post: @post)
   end
 end
