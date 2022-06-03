@@ -3,7 +3,8 @@
   align-items: stretch;
   justify-content: space-between;
   position: relative;
-  background-color: white;
+  height: 100vh;
+  background-color: #F3F3F3;
 }
 
 .left-column {
@@ -28,10 +29,41 @@
 
 .right-column {
   justify-content: space-between;
-  background-color: rgb(0, 105, 128);
+  background-color: #F3F3F3;
   align-items: stretch;
   position: relative;
   width: 300px;
+  padding: 15px;
+  .name-and-avatar {
+    display:flex;
+    .name-position {
+      margin-left: 10px;
+    }
+    #post-avatar {
+      width: 64px;
+      border-radius: 50%;
+    }
+  }
+  h2, h3{
+    color: black;
+    text-shadow: none;
+  }
+  h2 {
+    font-size: 22px;
+
+  }
+  h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  p {
+    color: #807b7b;
+    text-shadow: none;
+    font-size: 16px;
+  }
+  .top-margin {
+    margin-top: 37px;
+  }
 }
 
 .icon-container {

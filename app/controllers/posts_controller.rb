@@ -6,7 +6,9 @@ class PostsController < ApplicationController
   before_action :set_vote, only: %i[show upvote]
   skip_before_action :authenticate_user!, only: [ :show ]
 
-  def show; end
+  def show
+    @author = Profile.find_by(user_id: @post.user_id)
+  end
 
   def new
     @post = Post.new
