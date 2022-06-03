@@ -1,13 +1,15 @@
- <div class="left-column">
-    <div class="icon-container">
-      <div id="bookmark" class="btn btn-primary">
-        <i class="far fa-bookmark"></i>
-      </div>
-      <div id="chat"class="btn btn-primary">
-        <i class="far fa-comment-alt"></i>
-      </div>
-      <div id="comment"class="btn btn-primary">
-        <i class="far fa-edit"></i>
-      </div>
+<div class="left-column">
+  <div class="sidebar-icon-container">
+    <div class="icon btn btn-primary">
+      <i class="far fa-bookmark"></i>
+    </div>
+    <div class="icon btn btn-primary">
+      <i class="far fa-comment-alt"></i>
+    </div>
+    <div class="icon btn btn-primary">
+    <%= link_to "#" do %>
+      <i class="far fa-edit"></i>
+    <% end %>
     </div>
   </div>
+</div>

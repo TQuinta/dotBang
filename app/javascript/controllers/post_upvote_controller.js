@@ -5,6 +5,7 @@ export default class extends Controller {
 
   connect() {
     console.log("Hello")
+    console.log(this.buttonTarget)
   }
 
   toggle(event) {
