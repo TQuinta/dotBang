@@ -1,0 +1,17 @@
+<div id="icons-top-right">
+    <div data-controller="post-upvote">
+      <div class="upvote-button">
+        <%= render "upvote" %>
+      </div>
+      <div class="count" data-post-upvote-target="count">
+        <p count><%= pluralize(@post.votes.count, "vote") %></p>
+      </div>
+    </div>
+
+  <div class="icon btn btn-primary">
+    <i class="far fa-comment-alt"></i>
+  </div>
+  <div class="icon btn btn-primary">
+    <i class="far fa-bookmark"></i>
+  </div>
+</div>

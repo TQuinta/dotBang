@@ -49,3 +49,124 @@
   background-color: #42798F;
   border-color: #42798F;
 }
+
+.tag-index {
+  position: absolute;
+  transform: scale(0);
+}
+
+.tag-index + label {
+  display: block;
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 1rem;
+  box-shadow: 1px 1px 1px;
+  text-align: center;
+  border: 1px solid #EAEAEA;
+  padding: 20px 20px;
+  background-color: white;
+  margin-right: 0.6rem;
+  margin-bottom: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.tag-index:checked + label {
+  color: white !important;
+}
+
+.tag-index-roles {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1rem;
+  border-radius: 2rem;
+  padding: 2rem  2rem;
+  background-color: #f3f3f3;
+  color: hwb(40 40% 59%);
+  border: 1px solid hwb(40 40% 59%);
+  margin-right: 0.6rem;
+  margin-bottom: 0.4rem;
+  margin-bottom: 0.4rem;
+  text-decoration: none;
+}
+
+.tag-index-roles:hover  {
+  background-color: #E9C46A;
+  color: white;
+  border-color: #E9C46A;
+}
+
+
+.tag-index-skills {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1rem;
+  border-radius: 2rem;
+  padding: 2rem  2rem;
+  background-color: #f3f3f3;
+  color: hwb(40 40% 59%);
+  border: 1px solid hwb(40 40% 59%);
+  margin-right: 0.6rem;
+  margin-bottom: 0.4rem;
+  margin-bottom: 0.4rem;
+  text-decoration: none;
+}
+
+.tag-index-skills:hover {
+  background-color: #42798F;
+  color: white;
+  border-color: #42798F;
+}
+
+.category-type-container {
+  text-align: center;
+}
+
+/*
+.tag-selector-roles {
+  position: absolute;
+  transform: scale(0);
+}
+
+.tag-selector-roles + label {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1rem;
+  border-radius: 2rem;
+  padding: 3rem  3rem;
+  background-color: #f3f3f3;
+  color: hwb(40 40% 59%);
+  border: 1px solid hwb(40 40% 59%);
+  margin-right: 0.6rem;
+  margin-bottom: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.tag-selector-skills {
+  position: absolute;
+  transform: scale(0);
+}
+
+.tag-selector-skills + label {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1rem;
+  border-radius: 2rem;
+  padding: 3rem  3rem;
+  background-color: #f3f3f3;
+  color: hwb(40 40% 59%);
+  border: 1px solid hwb(40 40% 59%);
+  margin-right: 0.6rem;
+  margin-bottom: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.tag-selector-skills:hover + label {
+  background-color: #42798F;
+  color: white;
+  border-color: #42798F;
+}
+
+label {
+  color: white
+}

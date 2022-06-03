@@ -1,10 +1,14 @@
 class PostsController < ApplicationController
-  before_action :set_skill, only: :create, if: :skill?
+  skip_before_action :authenticate_user!, only: [:index]
+  before_action :set_skill, only: :create, if: :skill? #before the 'create' method, call to 'set_skill' only if there is a skill
   before_action :set_role, only: :create, if: :role?
   before_action :set_params, only: %i[upvote show]
   before_action :set_vote, only: %i[show upvote]
+  skip_before_action :authenticate_user!, only: [ :show ]
 
-  def show; end
+  def show
+    @author = Profile.find_by(user_id: @post.user_id)
+  end
 
   def new
     @post = Post.new
@@ -18,6 +22,14 @@ class PostsController < ApplicationController
       redirect_to post_path(@post)
     else
       render :new
+    end
+  end
+
+  def index
+    if params[:type]
+      @posts = Post.where(postable_type: params[:type], postable_id: params[:postable_id])
+    else
+      @posts = [] #once we validate search works this 'else' should not show anything
     end
   end
 

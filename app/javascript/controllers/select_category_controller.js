@@ -1,3 +1,4 @@
+console.log("hello")
 import { Controller } from "stimulus"
 
 export default class extends Controller {
@@ -14,4 +15,9 @@ export default class extends Controller {
       this.skillsTarget.classList.add("d-none")
     }
   }
-}
+
+  showSearch(e) {
+
+      this.resultsTarget.classList.remove("d-none")
+    }
+};
