@@ -23,7 +23,11 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    if params[:type]
+      @posts = Post.where(postable_type: params[:type], postable_id: params[:postable_id])
+    else
+      @posts = [] #once we validate search works this 'else' should not show anything
+    end
   end
 
   def upvote

@@ -66,9 +66,9 @@
   font-size: 1rem;
   border-radius: 2rem;
   padding: 3rem  3rem;
-  background-color: #fffefb;
-  color: #E9C46A;
-  border: 1px solid #E9C46A;
+  background-color: #f3f3f3;
+  color: hwb(40 40% 59%);
+  border: 1px solid hwb(40 40% 59%);
   margin-right: 0.6rem;
   margin-bottom: 0.4rem;
   margin-bottom: 0.4rem;
@@ -77,6 +77,7 @@
 .tag-selector-roles:hover + label {
   background-color: #E9C46A;
   color: white;
+  border-color: #E9C46A;
 }
 
 .tag-selector-skills {
@@ -90,9 +91,9 @@
   font-size: 1rem;
   border-radius: 2rem;
   padding: 3rem  3rem;
-  background-color: #fcfeff;
-  color: #42798F;
-  border: 1px solid #42798F;
+  background-color: #f3f3f3;
+  color: hwb(40 40% 59%);
+  border: 1px solid hwb(40 40% 59%);
   margin-right: 0.6rem;
   margin-bottom: 0.4rem;
   margin-bottom: 0.4rem;
@@ -101,4 +102,5 @@
 .tag-selector-skills:hover + label {
   background-color: #42798F;
   color: white;
+  border-color: #42798F;
 }
