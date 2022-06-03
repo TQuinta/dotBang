@@ -8,5 +8,7 @@ Rails.application.routes.draw do
       patch :upvote
     end
   end
-  resources :profiles, only: %i[new create]
+  resources :profiles, only: %i[show new create]
+  resources :bookmarks, only: %i[index]
+  get '/chatrooms', to: "pages#chatrooms"
 end

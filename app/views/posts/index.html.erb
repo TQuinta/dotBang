@@ -1,6 +1,8 @@
+
 <%= render "shared/navbar" %>
 <div class='index-container'>
   <div class='container' id="select-margin">
+
     <div data-controller="select-category">
         <%= simple_fields_for :tag do |n| %>
         <%= n.input :tag,
@@ -58,6 +60,7 @@
                 <%#= cl_image_tag booking.chef_profile.photo.key, crop: :fill %>
               <%# end %>
               <%= image_tag "https://uploads.sitepoint.com/wp-content/uploads/2017/03/1488480428eloquent-js.jpg",  class: "card-trip-user " %>
+
               <div class="post-content">
                 <div class="post-text">
                   <h2> <%= post.title %> - <%= post.postable.name%> </h2>

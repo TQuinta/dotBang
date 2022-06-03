@@ -160,4 +160,13 @@
   margin-bottom: 0.4rem;
   margin-bottom: 0.4rem;
 }
-*/
+
+.tag-selector-skills:hover + label {
+  background-color: #42798F;
+  color: white;
+  border-color: #42798F;
+}
+
+label {
+  color: white
+}
