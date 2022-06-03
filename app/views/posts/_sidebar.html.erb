@@ -1,13 +1,17 @@
 <div class="left-column">
+<%# if not logged in & if any button pressed-link to sign up/login page %>
+<%# <<%= if  %>
   <div class="sidebar-icon-container">
-    <div class="icon btn btn-primary">
+    <%= link_to bookmarks_path, class:"icon btn btn-primary" do %>
       <i class="far fa-bookmark"></i>
-    </div>
+    <% end %>
     <div class="icon btn btn-primary">
+    <%= link_to "/chatrooms" do %>
       <i class="far fa-comment-alt"></i>
+    <% end %>
     </div>
     <div class="icon btn btn-primary">
-    <%= link_to "#" do %>
+    <%= link_to user_signed_in? ? "/posts/new" : new_user_session_path do %>
       <i class="far fa-edit"></i>
     <% end %>
     </div>
