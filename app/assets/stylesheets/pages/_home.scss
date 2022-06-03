@@ -224,7 +224,97 @@ h3 {
   .title {
     margin: 4rem;
     margin-top: 7rem;
-    margin-bottom: 10rem;
+    margin-bottom: 4rem;
+    margin-left: 8rem;
+  }
+}
+@media screen and (max-height: 631px) {
+  .skills-btn-small {
+    position: absolute;
+    top: -6rem;
+    left: -8rem;
+    border-bottom: 4px solid #74b2e0;
+    border-right: 4px solid #74b2e0;
+    font-size: 20px;
+    padding: 10px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.06);
+  }
+  .arrow-up {
+    border: solid #F3F3F3;
+    border-width: 0 10px 10px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-137deg);
+    padding: 15px;
+    position: absolute;
+    top: -3rem;
+    left: 13rem;
+    box-shadow: 1px 1px 4px #292828;
+    box-shadow: 4px 4px 3px 0 #74b2e0;
+  }
+  .info-box {
+    background-color: rgba(255, 255, 255, 0.06);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    text-shadow: 1px 1px 4px #292828;
+    transform: skew(-20deg);
+    border-bottom: 4px solid #74b2e0;
+    border: 4px solid #74b2e0;
+    width: 709px;
+    padding: 13px;
+    text-align: center;
+  }
+  p {
+    color: #F3F3F3;
+    text-shadow: 1px 1px 4px #292828;
+    font-size: 12px;
+  }
+  h3 {
+    font-size: 32px;
+    margin-bottom: 19px;
+  }
+  .explore-more {
+    text-decoration: none;
+    font-size: 23px;
+    padding: 15px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.06);
+    position: absolute;
+    top: 15rem;
+    left: 12rem;
+    border: 4px solid #74b2e0;
+    text-shadow: 1px 1px 4px #292828;
+  }
+
+}
+@media screen and (max-height: 660px) {
+  .title {
+    margin: 4rem;
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+    margin-left: 8rem;
+  }
+  .big {
+    text-decoration: none;
+    font-size: 28px;
+    text-shadow: 1px 1px 4px #292828;
+    border-radius: 5px;
+    transform: skew(-20deg);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.06);
+  }
+
+}
+@media screen and (min-height: 660) {
+  .title {
+    margin: 4rem;
+    margin-top: 5rem;
+    margin-bottom: 4rem;
     margin-left: 8rem;
   }
 }
