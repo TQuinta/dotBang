@@ -1,5 +1,8 @@
-<div class='all-results-container'>
-  <div class='results-container'>
+
+<%= render "shared/navbar" %>
+<div class='index-container'>
+  <div class='container' id="select-margin">
+
     <div data-controller="select-category">
         <%= simple_fields_for :tag do |n| %>
         <%= n.input :tag,
@@ -7,17 +10,17 @@
                     collection_wrapper_tag: 'div',
                     collection_wrapper_class: 'tag-wrapper',
                     item_wrapper_class: 'tag-item',
-                    input_html: {class: 'tag-selector', data: { action:"click->select-category#showDropdown" }},
+                    input_html: {class: 'tag-index', data: { action:"click->select-category#showDropdown" }},
                     collection: Post::CATEGORIES %>
 
 
 
-        <div class="d-none" data-select-category-target="roles">
+        <div class="category-type-container <%= 'd-none' unless params[:type] == "Role" %>" data-select-category-target="roles">
           <%# n.input :postableRoles,
                       collection_wrapper_tag: 'div',
                       collection_wrapper_class: 'tag-wrapper',
                       item_wrapper_class: 'tag-item-2',
-                      input_html: {class: "tag-selector-roles", data: { action:"click->select-category#showSearch" }},
+                      input_html: {class: "tag-index-roles", data: { action:"click->select-category#showSearch" }},
                       label:"Roles",
                       collection: Role.all,
                       #params[:query],
@@ -25,13 +28,15 @@
           %>
           <% Role.all.each do |role| %>
             <%# postable_id could be anything as long as we use the same name in the controller  %>
-            <%= link_to role.name, posts_path(type: "Role", postable_id: role.id), class: 'text-dark'  %>
+
+              <%= link_to role.name, posts_path(type: "Role", postable_id: role.id), class: 'tag-index-roles', data: {action:"click->select-category#showSearch"}  %>
+
           <% end %>
         </div>
 
-        <div class="d-none" data-select-category-target="skills">
+        <div class="category-type-container <%= 'd-none' unless params[:type] == "Skill" %>" data-select-category-target="skills">
           <% Skill.all.each do |role| %>
-            <%= link_to role.name, posts_path(type: "Skill", postable_id: role.id), class: 'text-dark'  %>
+              <%= link_to role.name, posts_path(type: "Skill", postable_id: role.id), class: 'tag-index-skills', data: {action:"click->select-category#showSearch"} %>
           <% end %>
         </div>
         <% end %>
@@ -40,18 +45,22 @@
   <div class="container results-container" data-select-category-target="results">
     <div class="row justify-content-center">
       <div class="col-sm-8">
-        <div class="posts-title">
-          <h1 id="results">Results</h1>
-        </div>
-        <% @posts.each do |post| %>
-          <%= link_to post_path(post) do %>
+
+        <% if @posts.empty? && params[:type].present? %>
+          <h1 id="no-chef">No posts at the moment 🙁</h1>
+        <% elsif params[:type].present? %>
+          <div class="posts-title">
+            <h1 id="results">Results</h1>
+          </div>
+          <% @posts.each do |post| %>
             <div class="post">
-            <%# if post.chef_profile.meal_picture_url %>
-              <%#= image_tag booking.chef_profile.meal_picture_url%>
-            <%# else %>
-              <%#= cl_image_tag booking.chef_profile.photo.key, crop: :fill %>
-            <%# end %>
-              <%= image_tag "https://uploads.sitepoint.com/wp-content/uploads/2017/03/1488480428eloquent-js.jpg",  class: "card-trip-user" %>
+              <%# if post.chef_profile.meal_picture_url %>
+                <%#= image_tag booking.chef_profile.meal_picture_url%>
+              <%# else %>
+                <%#= cl_image_tag booking.chef_profile.photo.key, crop: :fill %>
+              <%# end %>
+              <%= image_tag "https://uploads.sitepoint.com/wp-content/uploads/2017/03/1488480428eloquent-js.jpg",  class: "card-trip-user " %>
+
               <div class="post-content">
                 <div class="post-text">
                   <h2> <%= post.title %> - <%= post.postable.name%> </h2>
@@ -68,7 +77,5 @@
       </div>
     </div>
   </div>
-  <% if @posts.empty? %>
-    <h1 id="no-chef">No posts at the moment 🙁</h1>
-  <% end %>
+
 </div>
