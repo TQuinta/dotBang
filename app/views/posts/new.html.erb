@@ -10,19 +10,20 @@
                   item_wrapper_class: 'tag-item',
                   input_html: {class: 'tag-selector', data: { action:"click->select-category#showDropdown" }},
                   collection: Post::CATEGORIES %>
+
       <div class="d-none" data-select-category-target="skills">
         <%= n.input :postableSkills,
                     label:"Skills",
                     collection: Skill.all,
                     as: :select
         %>
-      </div>
-      <div class="d-none" data-select-category-target="roles">
+     </div>
+     <div class="d-none" data-select-category-target="roles">
         <%= n.input :postableRoles,
                     label:"Roles",
                     collection: Role.all,
                     as: :select
-        %>
+      %>
       </div>
       <% end %>
 
