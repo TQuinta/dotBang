@@ -16,15 +16,8 @@ export default class extends Controller {
     }
   }
 
-  showSearch(event){
-    if (event.target.value === "xxx") {
-      this.skillsTarget.classList.remove("d-none")
-      this.rolesTarget.classList.add("d-none")
-      // this.inputTarget.classList.remove("d-none")
+  showSearch(e) {
+
+      this.resultsTarget.classList.remove("d-none")
     }
-    if (event.target.value === "xxx") {
-      this.rolesTarget.classList.remove("d-none")
-      this.skillsTarget.classList.add("d-none")
-    }
-  }
-}
+};
