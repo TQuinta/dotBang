@@ -5,11 +5,18 @@
 .upvote-button {
   border: none;
   outline: none;
+  box-shadow: none;
+  text-shadow: none;
+  text-decoration: none;
+  background-color: transparent;
 }
 
 .upvote-button:focus {
   border: none;
   outline: none;
+  box-shadow: none;
+  text-shadow: none;
+  text-decoration: none;
 }
 
 .far{
@@ -36,7 +43,7 @@
       color: inherit;
     }
     color: rgba($color: #000000, $alpha: 0.4);
-    background-color: #f3f3f3;
+    background-color: transparent;
     border: none;
     padding: 16px 10px;
     transition: all 0.4s;

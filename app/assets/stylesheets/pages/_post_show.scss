@@ -18,7 +18,7 @@
 
 .mid-column {
   justify-content: space-between;
-  background-color: rgb(154, 154, 201);
+  background-color: white;
   align-items: stretch;
   position: relative;
   flex: 1 0 auto;
@@ -44,18 +44,21 @@
     color: black;
     font-size: 40px;
     margin-left: 20px;
+    text-shadow: none;
   }
 
   h2 {
     color: black;
     font-size: 30px;
     margin-left: 20px;
+    text-shadow: none;
   }
 
   p {
     color: black;
     font-size: 15px;
     margin-left: 20px;
+    text-shadow: none;
   }
 
 }
