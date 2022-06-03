@@ -9,4 +9,6 @@ Rails.application.routes.draw do
     end
   end
   resources :profiles, only: %i[new create]
+  resources :bookmarks, only: %i[index]
+  get '/chatrooms', to: "pages#chatrooms"
 end

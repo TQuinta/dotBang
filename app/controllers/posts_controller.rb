@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   before_action :set_role, only: :create, if: :role?
   before_action :set_params, only: %i[upvote show]
   before_action :set_vote, only: %i[show upvote]
+  skip_before_action :authenticate_user!, only: [ :show ]
 
   def show; end
 
