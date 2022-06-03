@@ -4,7 +4,9 @@ class PostsController < ApplicationController
   before_action :set_params, only: %i[upvote show]
   before_action :set_vote, only: %i[show upvote]
 
-  def show; end
+  def show
+    @author = Profile.find_by(user_id: @post.user_id)
+  end
 
   def new
     @post = Post.new
