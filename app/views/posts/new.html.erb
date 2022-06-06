@@ -34,8 +34,10 @@
       <div class="post-blurb" data-select-category-target="roles">
         <%= f.input :blurb, label:"Interesting headline to captivate users"%>
       </div>
+           <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+
       <div class="post-content" data-select-category-target="roles">
-        <%= f.input :content, label:"Your article goes here!", as: :rich_text_area%>
+        <%= f.rich_text_area :rich_content, label:"Your article goes here!"%>
       </div>
       <div class="post-submit">
         <%= f.submit %>
