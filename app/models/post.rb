@@ -3,6 +3,7 @@ class Post < ApplicationRecord
   belongs_to :postable, polymorphic: true
   # belongs_to :profile, through: :users
   has_many :votes
+  has_many :bookmarks
   has_many_attached :photos
   has_rich_text :rich_content
 

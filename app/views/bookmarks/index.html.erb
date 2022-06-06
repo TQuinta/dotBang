@@ -1,1 +1,16 @@
-<h1>My Bookmarks</h1>
+<div class="page-container">
+  <h1>My Bookmarks</h1>
+  <div class="mid-column">
+    <% @user_bookmarks.each do |bookmark| %>
+      <div>
+        <%= link_to post_path(bookmark.post) do %>
+          <%= bookmark.post.title %>
+          <%= bookmark.post.blurb %>
+          <% end %>
+        <%= link_to bookmark_path(bookmark), method: :delete do %>
+          <i class="icon far fa-solid fa-bookmark"></i>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
