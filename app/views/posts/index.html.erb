@@ -1,49 +1,38 @@
 
 <%= render "shared/navbar" %>
-
 <div class='page-container'>
-  <%# <div class="bg"></div>
-  <div class="bg bg2"></div>
-  <div class="bg bg3"></div> %>
   <div class='index-container'>
     <div class='container' id="select-margin">
 
-      <div data-controller="select-category">
-          <%= simple_fields_for :tag do |n| %>
-          <%= n.input :tag,
-                      as: :radio_buttons,
-                      collection_wrapper_tag: 'div',
-                      collection_wrapper_class: 'tag-wrapper',
-                      item_wrapper_class: 'tag-item',
-                      input_html: {class: 'tag-index', data: { action:"click->select-category#showDropdown" }},
-                      collection: Post::CATEGORIES %>
+    <div data-controller="select-category">
+        <%= simple_fields_for :tag do |n| %>
+        <%= n.input :tag,
+                    as: :radio_buttons,
+                    collection_wrapper_tag: 'div',
+                    collection_wrapper_class: 'tag-wrapper',
+                    item_wrapper_class: 'tag-item',
+                    input_html: {class: 'tag-index', data: { action:"click->select-category#showDropdown" }},
+                    collection: Post::CATEGORIES,
+                    checked: "#{params[:type]}s" # This is Lorenzo's fault and it is horrible I-ll fix it at some point
+                     %>
+        <% end %>
 
+        <div class="category-type-container <%= 'd-none' unless params[:type] == "Role" %>" data-select-category-target="roles">
+          <% Role.all.each do |role| %>
+              <%= link_to role.name,
+                posts_path(type: "Role", postable_id: role.id),
+                class: "tag-index-roles #{ 'active' if role == @postable }",
+                data: {action:"click->select-category#showSearch"}  %>
+          <% end %>
+        </div>
 
+        <div class="category-type-container <%= 'd-none' unless params[:type] == "Skill" %>" data-select-category-target="skills">
+          <% Skill.all.each do |role| %>
+              <%= link_to role.name,
+                posts_path(type: "Skill", postable_id: role.id),
+                class: "tag-index-skills #{ 'active' if role == @postable }",
+                data: {action:"click->select-category#showSearch"} %>
 
-          <div class="category-type-container <%= 'd-none' unless params[:type] == "Role" %>" data-select-category-target="roles">
-            <%# n.input :postableRoles,
-                        collection_wrapper_tag: 'div',
-                        collection_wrapper_class: 'tag-wrapper',
-                        item_wrapper_class: 'tag-item-2',
-                        input_html: {class: "tag-index-roles", data: { action:"click->select-category#showSearch" }},
-                        label:"Roles",
-                        collection: Role.all,
-                        #params[:query],
-                        as: :check_boxes
-            %>
-            <% Role.all.each do |role| %>
-              <%# postable_id could be anything as long as we use the same name in the controller  %>
-
-                <%= link_to role.name, posts_path(type: "Role", postable_id: role.id), class: 'tag-index-roles', data: {action:"click->select-category#showSearch"}  %>
-
-            <% end %>
-          </div>
-
-          <div class="category-type-container <%= 'd-none' unless params[:type] == "Skill" %>" data-select-category-target="skills">
-            <% Skill.all.each do |role| %>
-                <%= link_to role.name, posts_path(type: "Skill", postable_id: role.id), class: 'tag-index-skills', data: {action:"click->select-category#showSearch"} %>
-            <% end %>
-          </div>
           <% end %>
       </div>
     </div>

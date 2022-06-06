@@ -1,6 +1,7 @@
 .page-container {
   backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, 0.06);
+  min-height: 100vh;
   // .bg {
   //   -webkit-animation: slide 8s ease-in-out infinite alternate;
   //   animation: slide 8s ease-in-out infinite alternate;
@@ -32,8 +33,6 @@
   // }
 }
 .index-container {
-  background-color: #f3f3f3;
-  align-items: center;
   width: 0 auto;
 
   #select-margin {

@@ -26,6 +26,7 @@ class PostsController < ApplicationController
 
   def index
     if params[:type]
+      @postable = (params[:type] == "Role" ? Role : Skill).find(params[:postable_id])
       @posts = Post.where(postable_type: params[:type], postable_id: params[:postable_id])
     else
       @posts = [] # once we validate search works this 'else' should not show anything
