@@ -63,8 +63,11 @@
           </p>
           <div class="tags">
             <% Role.all.each do |role| %>
-              <a href="/"  class="tag-btns role-tag"> <span class="skew-fix"> <%= role.name %> </span></a>
-            <% end %>
+              <%= link_to role.name,
+                posts_path(type: "Role", postable_id: role.id),
+                class: "tag-btns role-tag #{ 'active' if role == @postable }",
+                data: {action:"click->select-category#showSearch"}  %>
+          <% end %>
           </div>
           <%# <a href="/posts" class="explore-more"> <span class="skew-fix">Explore more</span></a> %>
         </div>
@@ -80,7 +83,10 @@
           </p>
           <div class="tags">
             <% Skill.all.each do |skill| %>
-              <a href="/" class="tag-btns skill-tag"> <span class="skew-fix"> <%= skill.name %> </span></a>
+              <%= link_to skill.name,
+                posts_path(type: "Skill", postable_id: skill.id),
+                class: "tag-btns skill-tag #{ 'active' if skill == @postable }",
+                data: {action:"click->select-category#showSearch"} %>
             <% end %>
           </div>
           <%# <a href="/posts" class="explore-more"> Explore more</a> %>
