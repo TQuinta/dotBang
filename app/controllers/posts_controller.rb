@@ -18,7 +18,6 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user = current_user
     @post.postable = @postable
-    raise
     if @post.save
       redirect_to post_path(@post)
     else
