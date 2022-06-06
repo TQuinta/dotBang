@@ -34,6 +34,19 @@ class PostsController < ApplicationController
     end
   end
 
+ # for search bar: check if this is correct
+ # need to pur "params" into private section if so
+#  def index
+#   if params[:query].present?
+#     @posts = policy_scope(Post).search_by_title_and_blurb(params[:query])
+#   elsif
+#     @posts = policy_scope(Post).order(created_at: :desc)
+#   else
+#     puts "No posts related to your search"
+#   end
+# end
+
+
   private
 
   def set_vote
