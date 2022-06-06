@@ -59,14 +59,14 @@
           <a href="#" class="skills-btn-small" data-action="click->home-scroll#switchToSkills"><span class="skew-fix">Skills</span></a>
           <a href="#" class="arrow-up skew-fix" data-action="click->home-scroll#goUp"></a>
           <h3 class="skew-fix">Roles: </h3>
-          <p class="skew-fix">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-            sunt in culpa qui officia deserunt mollit anim id est laborum.
+          <p class="skew-fix">
           </p>
-          <a href="/posts" class="explore-more"> Explore more</a>
+          <div class="tags">
+            <% Role.all.each do |role| %>
+              <a href="/"  class="tag-btns role-tag"> <span class="skew-fix"> <%= role.name %> </span></a>
+            <% end %>
+          </div>
+          <%# <a href="/posts" class="explore-more"> <span class="skew-fix">Explore more</span></a> %>
         </div>
 
   </div>
@@ -76,14 +76,14 @@
           <a href="" class="skills-btn-small" data-action="click->home-scroll#switchToRoles"><span class="skew-fix">Roles</span></a>
           <a href="" class="arrow-up skew-fix" data-action="click->home-scroll#goUp"></a>
           <h3 class="skew-fix">Skills: </h3>
-          <p class="skew-fix">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-            sunt in culpa qui officia deserunt mollit anim id est laborum.
+          <p class="skew-fix">
           </p>
-          <a href="/posts" class="explore-more"> Explore more</a>
+          <div class="tags">
+            <% Skill.all.each do |skill| %>
+              <a href="/" class="tag-btns skill-tag"> <span class="skew-fix"> <%= skill.name %> </span></a>
+            <% end %>
+          </div>
+          <%# <a href="/posts" class="explore-more"> Explore more</a> %>
         </div>
   </div>
 
