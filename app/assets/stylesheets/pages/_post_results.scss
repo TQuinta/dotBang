@@ -22,7 +22,6 @@
   //   animation-duration:10s;
   // }
 
-
   // @keyframes slide {
   //   0% {
   //     transform:translateX(-25%);
@@ -33,6 +32,9 @@
   // }
 }
 .index-container {
+  background-color: #f3f3f3;
+  align-items: center;
+  width: 0 auto;
 
   #select-margin {
     margin-right: 0px;
