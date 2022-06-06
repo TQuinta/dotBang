@@ -79,7 +79,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :blurb, :content)
+    params.require(:post).permit(:title, :blurb, :rich_content)
   end
 
   def author?

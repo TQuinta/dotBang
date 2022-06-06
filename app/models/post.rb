@@ -4,9 +4,9 @@ class Post < ApplicationRecord
   # belongs_to :profile, through: :users
   has_many :votes
   has_many_attached :photos
-  has_rich_text :content
+  has_rich_text :rich_content
 
-  validates :title, :blurb, :content, presence: true
+  validates :title, :blurb, presence: true
 
   CATEGORIES = ["Roles", "Skills"]
 end

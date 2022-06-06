@@ -83,7 +83,7 @@ puts "#{profile.user.first_name} created"
 post = Post.new(
   title: "How I landed a full stack developer job without a tech degree or work experience",
   blurb: "From banker to full stack developer",
-  content: "Six months ago, I got my first developer job as full stack web developer for a startup. I had no relevant work experience, no tech degree, and not even a year of active coding experience. And yet I managed to land my dream offer, and can today for the first time in my life say that I love my job. Here’s how I did it — the long version. Part 1: Embracing the quarter-life crisis
+  rich_content: "Six months ago, I got my first developer job as full stack web developer for a startup. I had no relevant work experience, no tech degree, and not even a year of active coding experience. And yet I managed to land my dream offer, and can today for the first time in my life say that I love my job. Here’s how I did it — the long version. Part 1: Embracing the quarter-life crisis
   About three years ago, I was in the middle of a raging quarter-life crisis. I’d graduated from business school, gotten an attractive investment banking job, and then quit that same job just a few months in after realizing I hated everything about it.
   Completely lost and quite cliché, I went solo traveling for a few months to “find myself”. And although I thought I did, I didn’t. Not enough anyway. But it actually helped me figure out a few things.
   The first thing was that I simply couldn’t keep pursuing a finance career. I just couldn’t see any future scenario where that would make me happy.
@@ -473,7 +473,7 @@ puts "#{post.title} created"
 post = Post.new(
   title: "How I built my first React Native app for my first freelance client",
   blurb: "I recently launched my first native mobile app built with React Native. As it happens, it was also the first app I’ve built for a client as a freelancing developer. Here’s the bumpy ride, all the way from react-native init to app store release.",
-  content: "Why freelance?
+  rich_content: "Why freelance?
   Last May, I stumbled upon this exciting freelance opportunity. At the time, I was working as a full stack web developer for a Stockholm-based startup. It was my first dev job, and I’d landed it barely a year earlier (which you can read more about in this article).
   Summer was approaching rapidly, and the otherwise fairly high work pace was getting slower by the day. During one week, when the product team’s rotating tech support duty was mine, I was feeling a bit bored and frustrated with some of the bugs I was assigned to.
   It was in this gloomy mood that my dad reached out to me about his intentions to build a mobile app for his company’s customers. Although he knew my job kept me busy and didn’t expect a full-time commitment, he asked if I wanted to be a part of the project in a more advisory type of role. Somewhat intellectually starved I said yes. Although it wasn’t my original intention, this advisory role eventually resulted in me taking on the development of the app as lead developer.
@@ -772,7 +772,7 @@ puts "#{profile.user.first_name} created"
 post = Post.new(
   title: "How I Transitioned From an Accounting Student to a Front-End Developer",
   blurb: "How I landed my first Web developer job, resources, tips",
-  content: "My background
+  rich_content: "My background
 I am a recent graduate of Nnamdi Azikwe University, Awka, Anambra state. I studied Accounting & Finance as my major in university.
 The journey
 I wrote my first HTML code in September 2018 and it was super exciting to see my first “Hello World” display on the browser screen. It was my first exposure to what the web was all about. Growing up as a kid I wasn’t exposed to computers to play around with.
@@ -872,7 +872,7 @@ skill = Skill.find_by(name: "Ruby")
 post = Post.new(
   title: "Learning Ruby on Rails in 2016 from the best resources",
   blurb: "How I landed my first Web developer job, resources, tips",
-  content: "First things first. The why. I’ve got started with coding in March 2015 and Rails in September 2015 to be able to code this app: faskyn. Prior to that I didn’t really know what coding is about. I’ve got a strong math background and used some ANSYS, Mathcad and Excel though, none of those has anything to do with web development. So I had to pick up not only the Rails but the front-end, browser, http, server, rack, command line, git, etc. things and also figure out how the business logic fits in. More than half a year passed and now the app is in a pretty good shape. At the moment with my friend we are trying to get some users, but that’s another story.
+  rich_content: "First things first. The why. I’ve got started with coding in March 2015 and Rails in September 2015 to be able to code this app: faskyn. Prior to that I didn’t really know what coding is about. I’ve got a strong math background and used some ANSYS, Mathcad and Excel though, none of those has anything to do with web development. So I had to pick up not only the Rails but the front-end, browser, http, server, rack, command line, git, etc. things and also figure out how the business logic fits in. More than half a year passed and now the app is in a pretty good shape. At the moment with my friend we are trying to get some users, but that’s another story.
   Stack
   Why Rails? Based on the type of the app it was clear it would be a web app, so I needed a web framework with which I could quickly implement it. As of 2015 there were basically two reasonable choices: RoR and Node.js. I decided to go with Rails since it’s faster to get shit done, easier to pick up for newbies and there are a ton of resources available. There was/is a huge hype around Node.js but fortunately I have not fallen prey to it.
   Full stack: RoR (Ruby 2.2.3, Rails 4.2.4), Heroku + addons, PostgreSQL, Puma, AWS(S3 and CloudFront), SASS, jQuery, Bootstrap, AJAX, RSpec+Capybara, Middleman. There is nothing fancy about the stack. Since I decided to stick with Heroku (works great, awesome documentation and deals with DevOps stuff almost with no config) Postgres and Puma were default choices. As I was a total beginner I preferred the convention and the well documented solutions.
