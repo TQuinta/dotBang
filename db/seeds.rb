@@ -94,14 +94,14 @@ post = Post.new(
   I went on like this for about eight months, doubling as a writer/editor and a freelancing business analyst. But eventually I started losing interest in the job at the magazine.
   As any sane person dealing with digital content will know, clickbait cultures come at the expense of creativity and quality. In other words, when the main incentive of your content is clicks, all the superlatives required to hunt down those clicks will soon wear down on any creative ambitions that were there in the first place. Besides, I couldn’t shake the feeling that as a writer/editor, I was always too far away from the action I was reporting on.
   So I quit. Which was ok according to my trial-and-error deal with myself. But it still felt crappy, since I’d actually invested eight months into the whole writing thing. But as someone smart may or may not have said: when one door closes, another one opens.
-  And I still had one more thing on my trial-and-error list to check off.
-  Part 2: The lunch that changed my life
+  And I still had one more thing on my trial-and-error list to check off.\n\n
+  Part 2: The lunch that changed my life\n
   Life is weird, and sometimes it will hide the biggest, most life-changing inspirations in the places you’d least expect. It was certainly like that for me when I experienced my first “pull” towards coding.
   Although quitting the job at the magazine felt like a failure, the experience would prove to not have been completely in vain after all. After writing so much about tech startups and the exciting lives of entrepreneurs, I was dead set on giving that lifestyle a shot as well.
   And after about a month of research and job hunting, I managed to land a job at one of the then — supposedly — most promising FinTech companies in the Nordics. In just a few years, it had grown to become one of Europe’s biggest equity crowdfunding platforms.
   I hadn’t really applied to any specific job opening. But since I really believed in the company’s mission, and was impressed by their success, I’d rather just gotten in touch with their CFO telling him just that. We met a couple of times, and all of a sudden I was working there in some quite fuzzy business development role.
   Although I’d hoped to get to work on strategic and analytical projects, I ended up doing what fuzzy business developers usually end up doing: selling. Which was also why this job too didn’t work out in the end.
-  But, there’s more.
+  But, there’s more.\n
   Just like the last job experience from the magazine, this job would also prove to not have been all in vain. In fact, without it, I’d probably not be a developer today. Because that’s where I met Sandra.
   She was a front-end developer in the product team, sitting just on the other end of the tiny coworking office we were cramped in at the time.
   Technically we were colleagues, but as anyone whose worked in a dysfunctional tech company will know, the distance from the sales team to the product team can often feel like galaxies apart.
@@ -111,36 +111,36 @@ post = Post.new(
   I was shocked to learn that she had no “real” education in web development, which for me at the time would equal nothing short of an academic degree. Everything she knew, she’d learned from MOOC platforms (Massive Open Online Courses), like freeCodeCamp and Codecademy.
   She told me she had a background in finance, just like me. In fact, she had been working as a business controller for several years until just recently, when she’d joined the same startup as I had, just a few months earlier as a front-end intern.
   When she showed me the portfolio page she’d built with just some six months of coding experience, I couldn’t believe it. It was incredible.
-  That lunch opened up a world of possibilities for me. Sandra’s story made me hungry for more.
+  That lunch opened up a world of possibilities for me. Sandra’s story made me hungry for more.\n
   So for weeks I researched the different types of paths that people had taken to become developers. I ended up in all sorts of forums and articles, many of which I found right here on Medium.
   For example, Stackoverflow’s annual developer survey (100,000 interviewees) stated that only half of all professional developers had a bachelor’s degree, and of this half, a whole third majored in something completely unrelated to computer science and software engineering.
   The more I read, the more I realized how narrow my definition of education had been. If you didn’t need a computer science degree to break into something as complex as software engineering, what did you need an academic degree for? Although I might not have been able to see it then, I now clearly see how broken the academic system is.
   It was designed for the industrial age of workers, where you’d specialize in one craft, and then use those same skills for the rest of your life. It was certainly not designed for today’s knowledge society, where all information of the history of the world is never more than a few clicks away, and where things change so fast that education must in fact be a life-long process, and not the learn-once-use-forever one-off experience.
   But that’s a topic big enough for an article by itself. The important thing about that lunch with Sandra was that it ignited something in me, and motivated me to break free from the destructive loop that I found my current half-assed business career to be.
   Although I’d always envied programmers around me — even to the extent that I’d taken a Python 101 summer course a few years earlier — I’d never considered it a viable career path for me. At least not without going back to university for 3 — 5 years.
-  So if you’re reading this Sandra, thank you! If I with this article can inspire just one person the way you inspired me, I’d consider the effort of writing it repaid a thousand times.
-  Part 3: The text that cost me $6,000
+  So if you’re reading this Sandra, thank you! If I with this article can inspire just one person the way you inspired me, I’d consider the effort of writing it repaid a thousand times.\n
+  Part 3: The text that cost me $6,000\n
   Over the next few months I spent hundreds of hours on online platforms like Codecademy and freeCodeCamp. I even purchased a subscription to the paid platform Code School.
   I’m not sure I really knew what my goal was. What got me started was the desperation of my recurring career disappointments. But what kept me going was how ridiculously fun and rewarding I found the coding exercises to be.
   I couldn’t even tell you at what point the coding turned from a casual side project, to the dead-serious “I’m going to be a professional developer.” But it was probably somewhere around here. I was just about to receive my front-end certificate from freeCodeCamp, when my next life-changing event occurred.
   After quitting my job as a business developer, I’d decided to escape the freezing limbo that is Swedish winter to go travel in Central America. I reckoned that if I was gonna spend hundreds of hours alone, teaching myself coding, I might as well do it somewhere warm, cheap, and not depressing.
-  I was coding on my laptop in a hostel in El Salvador, when I got a text from my friend Marie.
-  “I got the job!” it said.
+  I was coding on my laptop in a hostel in El Salvador, when I got a text from my friend Marie.\n\n
+  “I got the job!” it said.\n\n
   Marie was also learning how to code. I recalled how she, a few months earlier, had been telling me about this code school she went to. A “coding bootcamp.”
   At the time I’d basically mocked her for it — So. You’re gonna pay $5,000 for a 12 week course? And you’re not receiving a single university credit for it? And you dropped out of your top-tier MBA to do this? Sounds legit.
   And yet there she was. Four months later, and Marie was officially employed by one of Accenture’s digital agencies as a junior back-end developer. I was really happy for her, but of course also extremely jealous.
   I stopped what I was doing and made some calculations. If I could keep up my current pace, coding some 6 hours per day on average, about 5 days a week, I would do 30 hours per week. So to finish freeCodeCamp’s full 1,200 hour program, it would take me at least 8 more months. And that’s if I could keep up the pace. Which I definitely couldn’t, since my money was running out and I would have to go back to Sweden and get a new job soon.
   I kicked myself for not having taken the same road as Marie from the start, and spent my money on a bootcamp instead of backpacking for 4 months. Well, what’s done is done, I thought to myself. I’d still have to accept the fact that a bootcamp was the best option to reach an employable level fast enough.
-  Back to good old Google research.
+  Back to good old Google research.\n\n
 
   In a way, I felt like I was right back where I started after that lunch with Sandra. Only this time, I looked at the whole bootcamp phenomenon with a fresh pair of eyes. Knowing Marie’s story, I knew that not all of them were too-good-to-be-true scams, but actually plausible ways to break into the industry.
   Later on, Stackoverflow’s annual developer survey again reassured me with the stats that 88.1% of coding bootcamp alumni had been hired within a year after finishing the bootcamp.
   Thanks to Switchup and Coursereport, it didn’t take long until I discovered Le Wagon, the French coding bootcamp startup success story with more than 15 locations all around the world and top 5 ratings on both rankings (at the time of writing, actually #1 on both, with 27 locations!).
   After comparing it with alternatives like Hack Reactor, Ironhack, General Assembly, and NYCDA, a few main reasons made me prefer it over the others:
-  The relatively low price (back then $6,000).
-  The focus on entrepreneurship and product development.
-  The global presence and community.
-  Nevertheless, I still had a few doubts about the program.
+  The relatively low price (back then $6,000).\n
+  The focus on entrepreneurship and product development.\n
+  The global presence and community.\n
+  Nevertheless, I still had a few doubts about the program.\n
   The choice of the backend language Ruby and the MVC framework Rails. Although it appeared like this was pretty common among other recognized bootcamps, almost every article I read on the subject suggested that Javascript was really hot and what employers were looking for. My friend Marie’s bootcamp, for instance, taught a backend stack based on Node.js and Express.js. Both Javascript-based technologies. Some common arguments seemed to be that Ruby was a great language for learning, but that Node and Express were skills employers valued a lot higher. Was Ruby really the horse to bet on?
   The 9-week duration of the course seemed a bit short. Most competing programs appeared to be at least 12 weeks, which already seemed way too short to become an employable web developer.
   Le Wagon offered no actual job hunting assistance after completing the bootcamp. Many competitors offered either employment guarantees or seemingly solid career services functions.
@@ -153,7 +153,7 @@ post = Post.new(
   In the three months left, I would somehow have to earn the remaining $4,800 of the fee. Plus rent and living expenses. Well sh*t.
   I reached out to one of the companies that I’d previously consulted for, and luckily enough they had the perfect business analyst project coming up. Since they initially wouldn’t accept anything less than a 4-month contract, I had to convince them I could do the job in two. Somehow, it worked.
   Phew! Just one week earlier, I’d been a runaway traveler without a thought of ever going home. Now, I was to start my new two-month gig in Stockholm in less than two weeks, and then move to Barcelona. Exciting things ahead indeed.
-  Part 4: Bootcamp in Barcelona
+  Part 4: Bootcamp in Barcelona\n
   Fast-forward three months.. It’s the 1st of May 2017, and I’m in a classroom attending my first Le Wagon lecture.
   Around me are some 25 people from all corners of the world. Kilian from Germany, Daniel from Venezuela, Francesca from France, Arbi from Italy, Courtney from the US, and so on. Some with no coding experience at all, some with a little, and a few actually halfway to getting their computer science degrees.
   We’re listening to Gus, the local school manager, and Ruben, a Ruby teacher, explaining the structure of the program ahead.
