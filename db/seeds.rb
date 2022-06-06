@@ -44,11 +44,11 @@ role = Role.new(name: "Backend")
 role.save!
 puts "#{role.name} created"
 
-role = Role.new(name: "freelance")
+role = Role.new(name: "Freelance")
 role.save!
 puts "#{role.name} created"
 
-role = Role.new(name: "Full-stack")
+role = Role.new(name: "Full-Stack")
 role.save!
 puts "#{role.name} created"
 
