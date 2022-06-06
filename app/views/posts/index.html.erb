@@ -11,7 +11,9 @@
                     collection_wrapper_class: 'tag-wrapper',
                     item_wrapper_class: 'tag-item',
                     input_html: {class: 'tag-index', data: { action:"click->select-category#showDropdown" }},
-                    collection: Post::CATEGORIES %>
+                    collection: Post::CATEGORIES,
+                    checked: "#{params[:type]}s" # This is Lorenzo's fault and it is horrible I-ll fix it at some point
+                     %>
 
 
 
@@ -29,14 +31,20 @@
           <% Role.all.each do |role| %>
             <%# postable_id could be anything as long as we use the same name in the controller  %>
 
-              <%= link_to role.name, posts_path(type: "Role", postable_id: role.id), class: 'tag-index-roles', data: {action:"click->select-category#showSearch"}  %>
+              <%= link_to role.name,
+                posts_path(type: "Role", postable_id: role.id),
+                class: "tag-index-roles #{ 'active' if role == @postable }",
+                data: {action:"click->select-category#showSearch"}  %>
 
           <% end %>
         </div>
 
         <div class="category-type-container <%= 'd-none' unless params[:type] == "Skill" %>" data-select-category-target="skills">
           <% Skill.all.each do |role| %>
-              <%= link_to role.name, posts_path(type: "Skill", postable_id: role.id), class: 'tag-index-skills', data: {action:"click->select-category#showSearch"} %>
+              <%= link_to role.name,
+                posts_path(type: "Skill", postable_id: role.id),
+                class: "tag-index-skills #{ 'active' if role == @postable }",
+                data: {action:"click->select-category#showSearch"} %>
           <% end %>
         </div>
         <% end %>
