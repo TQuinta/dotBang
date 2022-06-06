@@ -18,6 +18,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user = current_user
     @post.postable = @postable
+    raise
     if @post.save
       redirect_to post_path(@post)
     else
@@ -27,6 +28,7 @@ class PostsController < ApplicationController
 
   def index
     if params[:type]
+      @postable = (params[:type] == "Role" ? Role : Skill).find(params[:postable_id])
       @posts = Post.where(postable_type: params[:type], postable_id: params[:postable_id])
     else
       @posts = [] #once we validate search works this 'else' should not show anything
@@ -79,7 +81,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :blurb, :content)
+    params.require(:post).permit(:title, :blurb, :rich_content, photos: [])
   end
 
   def author?

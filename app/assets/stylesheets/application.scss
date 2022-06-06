@@ -7,11 +7,12 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "trix/dist/trix";
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
 
 html * {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Quattrocento Sans', sans-serif;
 }
