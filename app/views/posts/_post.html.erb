@@ -1,10 +1,22 @@
 <div class="mid-column">
-
-    <div class="mid-column-content">
-      <div class="header-container">
+  <% if @post.postable_type == "Role" %>
+    <div class ="header-container-yellow">
+      <div class="header-container-blur">
         <h1><%= @post.title %></h1>
         <h2><%= @post.blurb %></h2>
       </div>
+    </div>
+  <% else %>
+    <div class ="header-container-blue">
+      <div class="header-container-blur">
+        <h1><%= @post.title %></h1>
+        <h2><%= @post.blurb %></h2>
+      </div>
+    </div>
+  <% end %>
+
+    <div class="mid-column-content">
+
     <div class="author-top-middle-column">
 
       <%= render "post_icons" %>
