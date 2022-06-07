@@ -1,7 +1,7 @@
 <% if !@comments.nil? %>
-  <% @comments.each do |comment| %>
-  <%# Please make a card/tile for comments %>
-    <div class="comment-box">
+  <div class="comment-box">
+    <h2>Community Comments</h2>
+    <% @comments.each do |comment| %>
       <div class="comment-box-flex">
         <div class="comment-box-name">
           <h3><%= comment.user.first_name.capitalize %></h3>
@@ -13,6 +13,6 @@
       <div class="comment-box-text">
         <p><%= comment.text %></p>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 <% end %>

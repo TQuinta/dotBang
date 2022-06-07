@@ -1,5 +1,4 @@
-<div>
-  <h2>Community Comments</h2>
+<div class="new-comment-box">
   <%= simple_form_for [ @post, @comment ] do |f| %>
   <%= f.input :text, label: "Leave your comments here!" %>
   <%= f.submit %>
