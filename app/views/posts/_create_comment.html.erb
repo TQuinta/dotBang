@@ -1,4 +1,7 @@
-<%= simple_form_for [ @post, @comment ] do |f| %>
-<%= f.input :text, label: "Leave your comments here!" %>
-<%= f.submit %>
-<% end %>
+<div>
+  <h2>Community Comments</h2>
+  <%= simple_form_for [ @post, @comment ] do |f| %>
+  <%= f.input :text, label: "Leave your comments here!" %>
+  <%= f.submit %>
+  <% end %>
+</div>

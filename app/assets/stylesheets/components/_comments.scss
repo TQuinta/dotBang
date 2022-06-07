@@ -1,0 +1,30 @@
+.comment-box {
+  border-bottom: 4px solid rgba($color: #74B2E0, $alpha: 0.6);
+  margin-bottom: 30px;
+  padding: 16px 8px;
+  h3 {
+    color: #3f3f3f;
+    text-shadow: none;
+    font-size: 20px;
+  }
+  p {
+    margin-bottom: 0px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+.comment-box-flex {
+  display: flex;
+  justify-content: space-between;
+
+  p {
+    margin-bottom: 18px;
+  }
+}
+
+.comment-box-date {
+  p {
+    color: #A8A8A8 !important;
+  }
+}
