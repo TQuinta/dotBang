@@ -34,6 +34,11 @@
 }
 .index-container {
   width: 0 auto;
+  justify-content: space-between;
+  align-items: stretch;
+  position: relative;
+  flex: 1 0 auto;
+  display: flex;
 
   #select-margin {
     margin-right: 0px;
@@ -41,4 +46,8 @@
 }
 #results {
   color: white;
+}
+
+.results-container {
+  margin-left: 20px;
 }
