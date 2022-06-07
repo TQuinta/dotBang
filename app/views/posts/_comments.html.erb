@@ -1,0 +1,10 @@
+<% if !@comments.nil? %>
+  <h2>Community Comments</h2>
+  <% @comments.each do |comment| %>
+  <%# Please make a card/tile for comments %>
+    <div>
+      <p><%= comment.user.username %>, created: <%= comment.created_at %></p>
+      <p><%= comment.text %></p>
+    </div>
+  <% end %>
+<% end %>

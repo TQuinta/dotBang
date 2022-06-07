@@ -2,12 +2,14 @@ class PostsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_skill, only: :create, if: :skill? # before the 'create' method, call to 'set_skill' only if there is a skill
   before_action :set_role, only: :create, if: :role?
-  before_action :set_params, only: %i[upvote show]
-  before_action :set_vote, only: %i[show upvote]
+  before_action :set_params, only: %i[show]
+  before_action :set_vote, only: %i[show]
 
   def show
     @author = Profile.find_by(user_id: @post.user_id)
     @bookmark = @post.bookmarks.find_by(user: current_user) || Bookmark.new
+    @comments = Comment.where(post: @post)
+    @comment = Comment.new
   end
 
   def new

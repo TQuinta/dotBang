@@ -17,7 +17,6 @@ class VotesController < ApplicationController
 
   private
 
-
   def handle_vote
     # binding.pry
     if author?
