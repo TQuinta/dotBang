@@ -1,0 +1,26 @@
+.sidebar-icon-container {
+  background-color: white;
+  position: relative;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  width: 100px;
+  //height: 100vh;
+  //make blue line (color: #74b2e0)
+}
+.sidebar {
+  background-color: white;
+  position: relative;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  width: 100px;
+  height: 100vh;
+  //make blue line (color: #74b2e0)
+  border-right: 4px solid #74b2e0;
+}
+
+.icon btn btn-primary {
+  color: grey;
+}
