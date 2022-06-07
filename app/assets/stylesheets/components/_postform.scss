@@ -83,6 +83,7 @@
   display: inline-block;
   font-size: 1rem;
   padding: 2rem  2rem;
+  background-color: #f3f3f3;
   color: hwb(40 40% 59%);
   border: 1px solid hwb(40 40% 59%);
   margin-right: 0.6rem;
@@ -90,13 +91,6 @@
   margin-bottom: 0.4rem;
   text-decoration: none;
   transform: skew(-20deg);
-  border-top: 4px solid #E9C46A;
-  border-left: 4px solid #E9C46A;
-  border-bottom: 4px solid transparent;
-  border-right: 4px solid transparent;
-  backdrop-filter: blur(10px);
-  background-color: rgba(255,255,255,0.06);
-  box-shadow: rgba(243,243,243,0.67) 0px 0px 4px 0px;
 }
 
 
@@ -113,19 +107,14 @@
   display: inline-block;
   font-size: 1rem;
   padding: 2rem  2rem;
+  background-color: #f3f3f3;
   color: hwb(40 40% 59%);
+  border: 1px solid hwb(40 40% 59%);
   margin-right: 0.6rem;
   margin-bottom: 0.4rem;
   margin-bottom: 0.4rem;
   text-decoration: none;
   transform: skew(-20deg);
-  border-bottom: 4px solid #42798F;
-  border-right: 4px solid #42798F;
-  border-top: 4px solid transparent;
-  border-left: 4px solid transparent;
-  backdrop-filter: blur(10px);
-  background-color: rgba(255,255,255,0.06);
-  box-shadow: rgba(243,243,243,0.67) 0px 0px 4px 0px;
 }
 
 .tag-index-skills:hover, .tag-index-skills.active {
