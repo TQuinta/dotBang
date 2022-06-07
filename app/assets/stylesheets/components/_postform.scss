@@ -32,7 +32,7 @@
 
 
 #tag_tag_roles + label {
-  color: #E9C46A;
+  color: #f3f3f3;
   border-top: 4px solid #74b2e0;
   border-left: 4px solid #74b2e0;
   border-bottom: 0;
@@ -48,7 +48,7 @@
 
 
 #tag_tag_skills + label {
-  color: #42798F;
+  color: #f3f3f3;
   font-size: 22px;
 }
 
@@ -70,17 +70,13 @@
   cursor: pointer;
   // box-sizing: border-box;
   width: 220px;
-  font-size: 20px;
-  box-shadow: 1px 1px 1px;
   text-align: center;
-  border: 1px solid #EAEAEA;
-  padding: 20px 20px;
-  background-color: white;
   margin-right: 0.6rem;
   margin-bottom: 0.4rem;
   margin-bottom: 0.4rem;
   transform: skew(-20deg);
-
+  background-color: rgba(255, 255, 255, 0.06);
+  box-shadow: rgba(99,99,99,0.2) 0px 2px 8px 0px;
   //olwyn changes
   border-bottom: 4px solid #74b2e0;
   border-right: 4px solid #74b2e0;
@@ -99,9 +95,7 @@
   display: inline-block;
   font-size: 20px;
   padding: 2rem  2rem;
-  background-color: #f3f3f3;
-  color: hwb(40 40% 59%);
-  border: 1px solid hwb(40 40% 59%);
+  color: #f3f3f3;
   margin-right: 0.6rem;
   margin-bottom: 0.4rem;
   margin-bottom: 0.4rem;
@@ -109,10 +103,14 @@
   transform: skew(-20deg);
 
   //olwyn changes:
-  border-top: 4px solid #74b2e0;
-  border-left: 4px solid #74b2e0;
+  border-top: 4px solid #74b2e0;
+  border-left: 4px solid #74b2e0;
+  border-bottom: 4px solid transparent;
+  border-right: 4px solid transparent;
   font-size: 20px;
   padding: 10px;
+  background-color: rgba(255, 255, 255, 0.06);
+  box-shadow: rgba(99,99,99,0.2) 0px 2px 8px 0px;
   -webkit-backdrop-filter: blur(10px);
 }
 
@@ -130,9 +128,7 @@
   display: inline-block;
   font-size: 20px;
   padding: 2rem  2rem;
-  background-color: #f3f3f3;
-  color: hwb(40 40% 59%);
-  border: 1px solid hwb(40 40% 59%);
+  color: #f3f3f3;
   margin-right: 0.6rem;
   margin-bottom: 0.4rem;
   margin-bottom: 0.4rem;
@@ -140,10 +136,14 @@
   transform: skew(-20deg);
 
   // olwyn changes:
-  border-bottom: 4px solid #74b2e0;
-  border-right: 4px solid #74b2e0;
+  border-bottom: 4px solid #74b2e0;
+  border-right: 4px solid #74b2e0;
+  border-top: 4px solid transparent;
+  border-left: 4px solid transparent;
   font-size: 20px;
   padding: 10px;
+  background-color: rgba(255, 255, 255, 0.06);
+  box-shadow: rgba(99,99,99,0.2) 0px 2px 8px 0px;
   -webkit-backdrop-filter: blur(10px);
   // backdrop-filter: blur(10px);
   // background-color: rgba(255, 255, 255, 0.06);
