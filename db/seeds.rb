@@ -11,6 +11,8 @@ require 'faker'
 # seeds for users, skills, roles
 # then make posts
 
+Comment.destroy_all
+Bookmark.destroy_all
 Skill.destroy_all
 Role.destroy_all
 Vote.destroy_all
@@ -44,11 +46,11 @@ role = Role.new(name: "Backend")
 role.save!
 puts "#{role.name} created"
 
-role = Role.new(name: "freelance")
+role = Role.new(name: "Freelance")
 role.save!
 puts "#{role.name} created"
 
-role = Role.new(name: "Full-stack")
+role = Role.new(name: "Full-Stack")
 role.save!
 puts "#{role.name} created"
 
