@@ -75,10 +75,12 @@
 }
 
 .mid-column-content {
+  margin-left: 12%;
+  margin-right: 12%;
   h1 {
     color: black;
     font-size: 35px;
-    margin-left: 20px;
+    //margin-left: 20px;
     text-shadow: none;
     padding-bottom: 10px;
   }
@@ -86,7 +88,7 @@
   h2 {
     color: black;
     font-size: 25px;
-    margin-left: 20px;
+    //margin-left: 20px;
     text-shadow: none;
     padding-bottom: 10px;
   }
@@ -94,7 +96,7 @@
   p {
     color: black;
     font-size: 15px;
-    margin-left: 20px;
+    //margin-left: 20px;
     text-shadow: none;
   }
 
@@ -116,7 +118,10 @@
 }
 
 .text-container {
-  h1, h2, p {
-    width: 700px;
+  //h1, h2, p {
+    //width: 700px;
+  //}
+  h2 {
+    font-weight: lighter;
   }
 }
