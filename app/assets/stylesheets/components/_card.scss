@@ -18,7 +18,7 @@
 
 .post {
   overflow: hidden;
-  height: 150px;
+  height: 180px;
   display: flex;
   align-items: center;
   // border-top: 1px solid #f3f3f3;
@@ -68,7 +68,8 @@ width: 40px;
 }
 
 .post-text {
-width: 70%;
+width: 100%;
+padding-top: 10px;
 p {
   text-align: justify;
   padding-right: 16px;

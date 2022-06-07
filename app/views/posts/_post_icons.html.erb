@@ -4,7 +4,7 @@
         <%= render "upvote" %>
       </div>
       <div class="count" data-post-upvote-target="count">
-        <p count><%= pluralize(@post.votes.count, "vote") %></p>
+        <%= pluralize(@post.votes.count, "vote") %>
       </div>
     </div>
 
@@ -12,6 +12,14 @@
     <i class="far fa-comment-alt"></i>
   </div>
   <div class="icon btn btn-primary">
-    <i class="far fa-bookmark"></i>
+    <% if @bookmark.persisted? %>
+      <%= link_to bookmark_path(@bookmark), method: :delete do %>
+        <i class="fas fa-solid fa-bookmark"></i>
+      <% end %>
+    <% else %>
+      <%= link_to post_bookmarks_path(@post), method: :post, data: {user: current_user} do %>
+        <i class="far fa-bookmark"></i>
+      <% end %>
+    <% end %>
   </div>
 </div>
