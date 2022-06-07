@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :posts, only: %i[new create show update index] do
     resources :bookmarks, only: %i[create]
+    resources :comments, only: %i[index create]
     member do
       patch :upvote, to: "votes#upvote"
     end
