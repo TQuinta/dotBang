@@ -16,11 +16,15 @@
 }
 .background-container {
   min-height: 100vh;
+  /* background-repeat: no-repeat; */
+  background-attachment: fixed;
+  background-size: 100vh;
 }
 
 #results {
-  color: white;
-  text-shadow: 1px 1px 4px #6d6c6c;
+  color: #3f3f3f;
+  text-shadow: none;
+  font-size: 30px;
 }
 
 .results-container {
@@ -28,6 +32,15 @@
 }
 
 .post-container{
-  padding: 20px;
-  width: 563px;
+  padding: 15px;
+  width: 700px;
+  transform: skew(-20deg);
+  backdrop-filter: blur(1rem);
+  margin: 1.5em 0;
+  padding-top: 0;
+  background-color: rgba(255, 255, 255, 0.18);
+  box-shadow: rgba(99,99,99,0.2) 0px 2px 8px 0px;
+  &:hover {
+    box-shadow: #74b2e0 2px 2px 7px 0px;
+  }
 }
