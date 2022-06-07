@@ -1,19 +1,53 @@
-<div class="left-column">
-<%# if not logged in & if any button pressed-link to sign up/login page %>
-<%# <<%= if  %>
+<div class="sidebar">
+
+
   <div class="sidebar-icon-container">
-    <%= link_to bookmarks_path, class:"icon btn btn-primary" do %>
-      <i class="far fa-bookmark"></i>
-    <% end %>
-    <div class="icon btn btn-primary">
-    <%= link_to "/chatrooms" do %>
-      <i class="far fa-comment-alt"></i>
-    <% end %>
+    <div class="sidebar-link" data-controller="sidebar-link" data-action="mouseover->sidebar-link#enter mouseout->sidebar-link#leave" >
+      <%= link_to root_path, class: "icon btn btn-primary",
+        data: { sidebar_link_target: "link" } do %>
+        <i class="fas fa-home"></i>
+      <% end %>
+
+      <div class="hidden popup" id="home" data-sidebar-link-target="popup">
+        <p class="popup-text">Home</p>
+      </div>
     </div>
-    <div class="icon btn btn-primary">
-    <%= link_to user_signed_in? ? "/posts/new" : new_user_session_path do %>
-      <i class="far fa-edit"></i>
-    <% end %>
+
+   <div class="sidebar-link" data-controller="sidebar-link" data-action="mouseover->sidebar-link#enter mouseout->sidebar-link#leave" >
+     <%= link_to :back, class: "icon btn btn-primary",
+     data: { sidebar_link_target: "link" } do %>
+     <i class="fas fa-arrow-left"></i>
+       <% end %>
+
+      <div class="hidden popup" data-sidebar-link-target="popup">
+        <p class="popup-text">Back</p>
+      </div>
+    </div>
+
+   <div class="sidebar-link"  data-controller="sidebar-link" data-action="mouseover->sidebar-link#enter mouseout->sidebar-link#leave" >
+    <%= link_to bookmarks_path, class: "icon btn btn-primary",
+    data: { sidebar_link_target: "link" } do %>
+    <i class="far fa-bookmark"></i>
+     <% end %>
+
+      <div class="hidden popup" id="book" data-sidebar-link-target="popup">
+        <p class="popup-text">My Bookmarks</p>
+      </div>
+    </div>
+
+    <%# make id for this to make my bookmarks look better %>
+
+   <div class="sidebar-link" data-controller="sidebar-link" data-action="mouseover->sidebar-link#enter mouseout->sidebar-link#leave" >
+       <%= link_to user_signed_in? ? "/posts/new" : new_user_session_path, class: "icon btn btn-primary" do %>
+         <i class="far fa-edit"></i>
+         <% end %>
+
+    <div class="hidden popup" id="create" data-sidebar-link-target="popup">
+        <p class="popup-text">Create a Post</p>
+      </div>
+    </div>
+    <div>
     </div>
   </div>
-</div>
+
+    </div>
