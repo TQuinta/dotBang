@@ -13,5 +13,9 @@
       <div class="text-container">
         <p><%= @post.rich_content %></p>
       </div>
+      <div>
+        <%= render "comments" %>
+        <%= render "create_comment" %>
+      </div>
     </div>
   </div>

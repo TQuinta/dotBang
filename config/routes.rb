@@ -4,11 +4,13 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   resources :posts, only: %i[new create show update index] do
+    resources :bookmarks, only: %i[create]
+    resources :comments, only: %i[index create]
     member do
-      patch :upvote
+      patch :upvote, to: "votes#upvote"
     end
   end
   resources :profiles, only: %i[show new create]
-  resources :bookmarks, only: %i[index]
+  resources :bookmarks, only: %i[index destroy]
   get '/chatrooms', to: "pages#chatrooms"
 end
