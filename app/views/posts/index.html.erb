@@ -54,9 +54,7 @@
                   <%# else %>
                     <%#= cl_image_tag booking.chef_profile.photo.key, crop: :fill %>
                   <%# end %>
-                  <%= image_tag "https://uploads.sitepoint.com/wp-content/uploads/2017/03/1488480428eloquent-js.jpg",  class: "card-trip-user " %>
-
-                  <div class="post-content">
+                   <div class="post-content">
                     <div class="post-text">
                       <h2> <%= post.title %> - <%= post.postable.name%> </h2>
                       <p><%= post.blurb %></p>
@@ -66,6 +64,12 @@
                       <p><strong><%= user.first_name %> <%= user.last_name %></strong>,  <%= post.created_at.strftime("%Y-%m-%d")%></p>
                     </div>
                   </div>
+                  <% if Profile.find_by(user_id: post.user_id).avatar_url %>
+                     <%= image_tag Profile.find_by(user_id: post.user_id).avatar_url, alt: "Le Wagon", width: 200, id:"post-avatar"  %>
+                  <% else %>
+                    <%= image_tag "https://uploads.sitepoint.com/wp-content/uploads/2017/03/1488480428eloquent-js.jpg",  class: "card-trip-user " %>
+                  <% end %>
+
                 </div>
                 <% end %>
             <% end %>
