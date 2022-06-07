@@ -1,17 +1,19 @@
 
-<%= render "shared/navbar" %>
+<div class="background-container <%= params[:type] == "Role" ? 'yellow-background' : 'blue-background' %>" data-controller="select-category" data-select-category-target="background">
   <div class='index-container'>
     <%= render "sidebar" %>
 
     <div class='container' id="select-margin">
-
-      <div data-controller="select-category">
+      <div >
         <%= simple_fields_for :tag do |n| %>
           <%= n.input :tag,
                       as: :radio_buttons,
                       collection_wrapper_tag: 'div',
                       collection_wrapper_class: 'tag-wrapper',
                       item_wrapper_class: 'tag-item',
+                      label: '',
+                      label_method: lambda { |text| "<span class='skew-fix'>#{text}</span>".html_safe },
+                      required: false,
                       input_html: {class: 'tag-index', data: { action:"click->select-category#showDropdown" }},
                       collection: Post::CATEGORIES,
                       checked: "#{params[:type]}s" # This is Lorenzo's fault and it is horrible I-ll fix it at some point
@@ -20,19 +22,25 @@
 
         <div class="category-type-container <%= 'd-none' unless params[:type] == "Role" %>" data-select-category-target="roles">
           <% Role.all.each do |role| %>
-            <%= link_to role.name,
-              posts_path(type: "Role", postable_id: role.id),
+            <%= link_to posts_path(type: "Role", postable_id: role.id),
               class: "tag-index-roles #{ 'active' if role == @postable }",
-              data: {action:"click->select-category#showSearch"}  %>
+              data: {action:"click->select-category#showSearch"} do %>
+              <span class="skew-fix">
+                <%= role.name %>
+              </span>
+            <% end %>
           <% end %>
         </div>
 
         <div class="category-type-container <%= 'd-none' unless params[:type] == "Skill" %>" data-select-category-target="skills">
           <% Skill.all.each do |skill| %>
-            <%= link_to skill.name,
-              posts_path(type: "Skill", postable_id: skill.id),
+            <%= link_to posts_path(type: "Skill", postable_id: skill.id),
               class: "tag-index-skills #{ 'active' if skill == @postable }",
-              data: {action:"click->select-category#showSearch"} %>
+              data: {action:"click->select-category#showSearch"} do %>
+              <span class="skew-fix">
+                <%= skill.name %>
+              </span>
+            <% end %>
           <% end %>
         </div>
       </div>
@@ -50,9 +58,8 @@
                 <%= link_to post_path(post), class: "text-decoration-none"  do %>
                 <div class="post-container">
                   <div class="post">
-                    <%= image_tag "https://uploads.sitepoint.com/wp-content/uploads/2017/03/1488480428eloquent-js.jpg",  class: "card-trip-user " %>
 
-                    <div class="post-content">
+                    <div class="post-content"  >
                       <div class="post-text">
                         <h2> <%= post.title %> </h2>
                         <p><%= post.blurb %></p>
@@ -75,7 +82,13 @@
 
                       </div>
                     </div>
+                    <% if Profile.find_by(user_id: post.user_id).avatar_url %>
+                      <%= image_tag Profile.find_by(user_id: post.user_id).avatar_url, alt: "Le Wagon", width: 200, id:"post-avatar"  %>
+                    <% else %>
+                      <%= image_tag "https://uploads.sitepoint.com/wp-content/uploads/2017/03/1488480428eloquent-js.jpg",  class: "card-trip-user " %>
+                    <% end %>
                   </div>
+
                 </div>
                 <% end %>
               <% end %>
@@ -85,3 +98,4 @@
       </div>
     </div>
   </div>
+</div>

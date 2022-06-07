@@ -12,6 +12,7 @@
 
   h1 {
     margin: 0;
+    font-weight: bold;
   }
 }
 
@@ -21,13 +22,20 @@
   display: flex;
   align-items: center;
   backdrop-filter: blur(1rem);
+  transition: box-shadow 0.3s;
+  box-shadow: #74b2e0 0px 0px 4px 0px;
+  &:hover {
+    box-shadow: #74b2e0 2px 2px 7px 0px;
+  }
   h2, p {
     text-shadow: none;
     color: #f3f3f3;
+    text-shadow: 1px 1px 4px #6d6c6c;
   }
 
   h2 {
     font-size: 20px;
+    font-weight: bold;
   }
 
   p {
@@ -35,7 +43,7 @@
     font-weight: lighter;
   }
   img {
-    height: 100%;
+    height: 50%;
     width: 120px;
     -o-object-fit: cover;
     object-fit: cover;
@@ -79,6 +87,7 @@ text-decoration: none;
 
 .author {
   margin-top: 9rem;
+  text-shadow: 1px 1px 1px #f3f3f3;
   p {
     font-size: 8px ;
   }
