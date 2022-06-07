@@ -9,6 +9,17 @@
 // <action-text-attachment> element we wrap around attachments. Otherwise,
 // images in galleries will be squished by the max-width: 33%; rule.
 .trix-content {
+  h2 {
+    padding: 16px 0px;
+  }
+
+  p {
+    padding: 8px 0;
+  }
+
+  ul, ol {
+    margin-left: 42px;
+  }
   .attachment-gallery {
     > action-text-attachment,
     > .attachment {
