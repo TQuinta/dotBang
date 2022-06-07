@@ -34,6 +34,7 @@
 .sidebar-icon-container, #icons-top-right {
   display: flex;
   position: relative;
+  padding-left: 80%;
   button:focus {
     outline:none
   }

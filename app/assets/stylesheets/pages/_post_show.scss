@@ -29,7 +29,8 @@
 
 .right-column {
   justify-content: space-between;
-  background-color: #F3F3F3;
+  border-left: 0.3px solid #807b7b;
+  background-color: white;
   align-items: stretch;
   position: relative;
   width: 300px;
@@ -65,6 +66,11 @@
   .top-margin {
     margin-top: 37px;
   }
+}
+
+.author-card {
+  margin-left: 44px;
+  margin-right: 32px;
 }
 
 .icon-container {
@@ -111,17 +117,23 @@
 .count {
   position: absolute;
   bottom: -8px;
-  left: -8px;
+  right: -6px;
   p {
     font-size: 12px;
   }
 }
 
-.text-container {
+.header-container {
   //h1, h2, p {
     //width: 700px;
   //}
+  padding-top: 30%;
+  padding-bottom: 15%;
+  h1 {
+    font-family: 'Poppins', sans-serif;
+  }
   h2 {
-    font-weight: lighter;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
   }
 }
