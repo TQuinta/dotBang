@@ -34,7 +34,6 @@ class PostsController < ApplicationController
     else
       @posts = [] # once we validate search works this 'else' should not show anything
     end
-
   end
  # for search bar: check if this is correct
  # need to pur "params" into private section if so

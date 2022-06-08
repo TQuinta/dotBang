@@ -37,24 +37,39 @@
   button:focus {
     outline:none
   }
-  .icon {
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-    color: rgba($color: #000000, $alpha: 0.4);
-    background-color: transparent;
-    border: none;
-    padding: 16px 10px;
-    transition: all 0.4s;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.08);
-    &:hover {
-      color:#74b2e0;
-    }
+}
+
+.icon {
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  color: rgba($color: #000000, $alpha: 0.4);
+  background-color: transparent;
+  border: none;
+  padding: 16px 10px;
+  transition: all 0.4s;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  &:hover {
+    color:#74b2e0;
   }
 
   .bold-icon {
     font-weight: bolder;
     color: #74b2e0;
+  }
+}
+
+.icon--default {
+  color: rgba($color: #000000, $alpha: 0.4);
+  background-color: transparent;
+  border: none;
+  padding: 16px 10px;
+  transition: all 0.4s;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  &:hover {
+    color:#74b2e0;
+    background-color: transparent;
+    border: 0 transparent;
   }
 }
