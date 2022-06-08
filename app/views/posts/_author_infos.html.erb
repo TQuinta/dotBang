@@ -1,12 +1,12 @@
 <div class="right-column">
     <div class="author-card">
-      <h2>About the author</h2>
+      <h2>About the Author</h2>
       <div class="name-and-avatar top-margin">
-      <% if @author.nil? %>
-        <%= image_tag "https://serc.carleton.edu/download/images/54334/empty_user_icon_256.v2.png", width:200, id: "post-avatar" %>
-      <% else %>
-        <%= image_tag @author.avatar_url, alt: "Le Wagon", width: 200, id:"post-avatar"  %>
-      <% end %>
+        <% if @author.nil? %>
+          <%= image_tag "https://serc.carleton.edu/download/images/54334/empty_user_icon_256.v2.png", width:200, id: "post-avatar" %>
+        <% else %>
+          <%= image_tag @author.avatar_url, alt: "Le Wagon", width: 200, id:"post-avatar"  %>
+        <% end %>
         <div class="name-position">
           <h3><%= @post.user.first_name %> <%= @post.user.last_name %></h3>
           <p><%= @author.current_role %></p>
@@ -28,11 +28,13 @@
         <h3>City</h3>
         <p><%= @author.city %></p>
       </div>
-      <div class="links top-margin">
-        <h3>Follow me</h3>
-         <p><%=  @author.GitHub_url %></p>
-         <p><%=  @author.LinkedIn_url %></p>
-         <p><%=  @author.Twitter_url %></p>
-      </div>
+      <% if !@author.GitHub_url.nil? && !@author.LinkedIn_url.nil? && !@author.Twitter_url.nil?%>
+        <div class="links top-margin">
+          <h3>Follow me</h3>
+          <p><%=  @author.GitHub_url %></p>
+          <p><%=  @author.LinkedIn_url %></p>
+          <p><%=  @author.Twitter_url %></p>
+        </div>
+      <%end%>
     </div>
 </div>

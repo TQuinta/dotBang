@@ -4,9 +4,11 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.user = current_user
     @comment.post = Post.find(params[:post_id])
-    @comment.save
-    redirect_to post_path(@comment.post)
-    # We need to redirect to the bottom of the page and either refresh or do it by AJAX / Stimulus
+    if @comment.save
+      redirect_to post_path(@comment.post, anchor: "comment-#{@comment.id}")
+    else
+      render post_path(@comment.post)
+    end
   end
 
   private

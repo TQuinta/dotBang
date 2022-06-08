@@ -1,0 +1,41 @@
+.sidebar-link {
+  position: relative;
+}
+
+
+.popup-text {
+  font-size: 16px;
+  color: rgb(232, 232, 232);
+  text-shadow: none;
+  margin: 0;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: grey;
+}
+ .popup {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: -30px;
+    top: 0;
+    bottom: 0;
+    margin-right: -20px;
+    transition: opacity 0.2s ease;
+
+    &.hidden {
+      opacity: 0;
+    }
+ }
+
+
+#book {
+    margin-right: -90px;
+}
+
+#create{
+    margin-right: -75px;
+}
+
+#home {
+  margin-right: -25px;
+}

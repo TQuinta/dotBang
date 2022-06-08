@@ -1,21 +1,32 @@
 <div class="mid-column">
-    <div class="author-top-middle-column">
-      <%= render "author_avatar" %>
-
-      <%= render "post_icons" %>
-
-    </div>
-    <div class="mid-column-content">
-      <div class="text-container">
+  <% color = @post.postable_type == "Role" ? "yellow" : "blue" %>
+    <div class ="header-container-<%= color %>">
+      <div class="header-container-blur">
         <h1><%= @post.title %></h1>
-        <h2><%= @post.blurb %></h2>
+          <h2>
+            <span class="blurb-shadow-<%= color %>">
+              <%= @post.blurb %>
+            </span>
+          </h2>
       </div>
+    </div>
+
+    <div class="mid-column-content">
+
+      <div class="author-top-middle-column">
+
+        <%= render "post_icons" %>
+
+      </div>
+      
       <div class="text-container">
         <p><%= @post.rich_content %></p>
       </div>
+      
       <div>
-        <%= render "comments" %>
         <%= render "create_comment" %>
+        <%= render "comments" %>
       </div>
+      
     </div>
-  </div>
+ </div>

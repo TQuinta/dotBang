@@ -1,51 +1,21 @@
-<div data-controller="home-scroll" data-home-scroll-target="body">
+<div class="section" data-controller="home-scroll" data-home-scroll-target="body">
   <div class="bg"></div>
   <div class="bg bg2"></div>
   <div class="bg bg3"></div>
-  <div class="navbar-home">
-    <p> Welcome to dotBang!</p>
-    <div class="login">
-      <% if user_signed_in? %>
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item dropdown">
-              <% profile = User.find(current_user.id).profile %>
-              <% if profile.nil? %>
-                <%= image_tag "https://serc.carleton.edu/download/images/54334/empty_user_icon_256.v2.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                  <% if current_user.profile.nil? %>
-                    <%= link_to "Create Profile", new_profile_path, class: "dropdown-item" %>
-                  <% else %>
-                    <%= link_to "My Profile", profile_path(current_user.profile), class: "dropdown-item" %>
-                  <% end %>
-                  <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-                </div>
-              <% else %>
-                <% url = User.find(current_user.id).profile.avatar_url %>
-                <%= image_tag "#{url}", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                  <% if current_user.profile.nil? %>
-                    <%= link_to "Create Profile", new_profile_path, class: "dropdown-item" %>
-                  <% else %>
-                    <%= link_to "My Profile", profile_path(current_user.profile), class: "dropdown-item" %>
-                  <% end %>
-                  <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-                </div>
-              <% end %>
-            </li>
-          </ul>
-      <% else %>
-        <a href="/users/sign_in">Login</a>
-        <a href="/users/sign_up" id="sign-up">Sign up</a>
-      <% end %>
-    </div>
-  </div>
+
+  <%= render "shared/navbar" %>
+
   <div class="container">
     <div class="content">
       <div class="semi-content">
         <div class="title">
           <h1>dot<strong id="bang">Bang</strong></h1>
-          <h2>Where you define your path, and make it happen</h2>
+          <div id="sentence">
+            <h2>Where you define your path, and make it happen</h2>
+            <p>Access community-created content by exploring the roles you’re interested in or the skills you want to sharpen</p>
+          </div>
         </div>
+
         <div class="buttons">
           <a class="big" href="/" id="roles" data-action="click->home-scroll#roleScroll"><span class="skew-fix">Roles</span></a>
           <a class="big" href="/" id="skills" data-action="click->home-scroll#skillScroll"><span class="skew-fix">Skills</span></a>
@@ -56,7 +26,7 @@
   </div>
   <div class="d-none flex" data-home-scroll-target="role">
         <div class="info-box">
-          <a href="#" class="skills-btn-small" data-action="click->home-scroll#switchToSkills"><span class="skew-fix">Skills</span></a>
+          <a href="#" class="skills-btn-small-roles" data-action="click->home-scroll#switchToSkills"><span class="skew-fix">Skills</span></a>
           <a href="#" class="arrow-up skew-fix" data-action="click->home-scroll#goUp"></a>
           <h3 class="skew-fix">Roles </h3>
           <p class="skew-fix">

@@ -1,0 +1,33 @@
+.sidebar-icon-container {
+  background-color: white;
+  flex-direction: column;
+  // position: relative;
+  // display: flex;
+  align-items: center;
+  align-content: center;
+  width: 100px;
+  padding: 8px;
+  position: sticky;
+  top: 30%;
+  bottom: 30%
+  // height: 100vh;
+}
+
+.sidebar {
+  background-color: white;
+  // position: relative;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  width: 100px;
+  position: sticky;
+  top: 30%;
+  bottom: 30%;
+  // height: 100vh;
+  border-right: 4px solid #74b2e0;
+}
+
+.icon btn btn-primary {
+  color: grey;
+}
