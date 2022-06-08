@@ -54,7 +54,7 @@
               <div class="posts-title">
                 <h1 id="results">Results</h1>
               </div>
-              <% @posts.each do |post| %>
+              <% @posts.sort_by { |post| post.votes.count }.reverse.each do |post| %>
                 <%= link_to post_path(post), class: "text-decoration-none"  do %>
                 <div class="post-container">
                   <div class="post">
@@ -68,6 +68,7 @@
                         <div id="icons-top-right">
                           <div class="icon btn btn-primary">
                             <i class="far fa-bookmark"></i>
+                            <p>Votes: <%= post.votes.count %></p>
                           </div>
 
                           <div class="icon btn btn-primary">

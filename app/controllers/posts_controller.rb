@@ -36,7 +36,6 @@ class PostsController < ApplicationController
     end
 
   end
-
  # for search bar: check if this is correct
  # need to pur "params" into private section if so
 #  def index
