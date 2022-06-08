@@ -4,10 +4,6 @@
   flex-wrap: wrap;
 }
 
-.tag-item {
-
-}
-
 .tag-selector {
   position: absolute;
   transform: scale(0);
@@ -24,12 +20,12 @@
   border: 1px solid #EAEAEA;
   border-radius: 4px;
   background-color: white;
+  margin-left: 15px;
 }
 
 .tag-selector:checked + label {
   color: white !important;
 }
-
 
 #tag_tag_roles + label {
   color: #E9C46A;
@@ -37,8 +33,8 @@
   border-left: 4px solid #74b2e0;
   border-bottom: 0;
   border-right: 0;
-  padding: 10px;
   font-size: 22px;
+  margin-right: 15px;
 }
 
 #tag_tag_roles:checked + label {
@@ -49,6 +45,10 @@
 
 #tag_tag_skills + label {
   color: #42798F;
+  border-bottom: 4px solid #74b2e0;
+  border-right: 4px solid #74b2e0;
+  border-top: 0;
+  border-left: 0;
   font-size: 22px;
 }
 
