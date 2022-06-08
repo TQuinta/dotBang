@@ -1,6 +1,6 @@
-<% if !@comments.nil? %>
-  <div class="comment-box">
-    <h2>Community Comments</h2>
+<div class="comment-box">
+  <h2>Community Comments</h2>
+  <% if !@comments.empty? %>
     <% @comments.sort_by { |comment| comment.created_at }.reverse.each do |comment| %>
       <div id="comment-<%= comment.id %>">
         <div class="comment-box-flex">
@@ -16,5 +16,7 @@
         </div>
       </div>
     <% end %>
-  </div>
-<% end %>
+  <% else %>
+    <p><em>Be the first to leave a message!</em></p>
+  <% end %>
+</div>
