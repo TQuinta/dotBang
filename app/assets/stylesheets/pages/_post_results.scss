@@ -54,9 +54,19 @@
   display: flex;
   flex-direction: column;
   width: 11vh;
+  justify-content: space-between;
+  p {
+    color: #3f3f3f;
+    text-shadow:none;
+  }
+  a {
+    color: rgba(0, 0, 0, 0.4);
+    background-color: transparent;
+  }
 }
 
 #bookmark-icon {
   position: absolute;
   right: 0px;
+  top: 73px;
 }

@@ -55,7 +55,7 @@
                 <h1 id="results">Results</h1>
               </div>
               <% @posts.sort_by { |post| post.votes.count }.reverse.each do |post| %>
-                <%= link_to post_path(post), class: "text-decoration-none"  do %>
+                <%= link_to post_path(post), class: "text-decoration-none content-card-width"  do %>
                 <div class="post-container">
                   <div class="post">
 
@@ -72,7 +72,7 @@
                     <% end %>
                   </div>
                   <div class= "post-details">
-                      <p>Votes: <%= post.votes.count %></p>
+                      <p class="skew-fix">Votes: <%= post.votes.count %></p>
                       <div class="icon--default btn btn-primary" id="bookmark-icon">
                         <% if current_user.bookmark_for(post) %>
                           <%= link_to bookmark_path(current_user.bookmark_for(post)), method: :delete do %>
