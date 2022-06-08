@@ -9,7 +9,9 @@
     </div>
 
   <div class="icon btn btn-primary">
-    <i class="far fa-comment-alt"></i>
+    <%= link_to post_path(@post, anchor: "new-comment") do %>
+      <i class="far fa-comment-alt"></i>
+    <% end %>
   </div>
   <div class="icon btn btn-primary">
     <% if @bookmark.persisted? %>

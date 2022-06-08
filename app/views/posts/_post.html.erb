@@ -13,17 +13,20 @@
 
     <div class="mid-column-content">
 
-    <div class="author-top-middle-column">
+      <div class="author-top-middle-column">
 
-      <%= render "post_icons" %>
+        <%= render "post_icons" %>
 
-    </div>
+      </div>
+      
       <div class="text-container">
         <p><%= @post.rich_content %></p>
       </div>
+      
       <div>
-        <%= render "comments" %>
         <%= render "create_comment" %>
+        <%= render "comments" %>
       </div>
+      
     </div>
-  </div>
+ </div>
