@@ -9,7 +9,7 @@
   min-height: 100vh;
 
   #select-margin {
-    margin-right: 0px;
+
   }
 }
 .background-container {
@@ -61,6 +61,7 @@
   a {
     color: rgba(0, 0, 0, 0.4);
     background-color: transparent;
+    width: max-content;
   }
 }
 
