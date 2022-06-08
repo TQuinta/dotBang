@@ -7,7 +7,7 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.new
     @bookmark.user = current_user
     @bookmark.post = Post.find(params[:post_id])
-    redirect_to post_path(@bookmark.post)
+    redirect_back(fallback_location: post_path(@bookmark.post))
     flash[:alert] = 'Please try again!' unless @bookmark.save
   end
 
