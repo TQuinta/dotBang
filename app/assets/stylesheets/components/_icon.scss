@@ -1,5 +1,6 @@
 .sidebar-icon-container {
   flex-direction: column;
+  position: sticky;
 }
 
 .upvote-button {
@@ -42,6 +43,7 @@
   button:focus {
     outline:none
   }
+
   .icon {
     a {
       text-decoration: none;
