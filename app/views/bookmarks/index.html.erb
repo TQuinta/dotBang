@@ -1,16 +1,23 @@
-<div class="page-container">
-  <h1>My Bookmarks</h1>
-  <div class="mid-column">
-    <% @user_bookmarks.each do |bookmark| %>
-      <div>
-        <%= link_to post_path(bookmark.post) do %>
-          <%= bookmark.post.title %>
-          <%= bookmark.post.blurb %>
-          <% end %>
-        <%= link_to bookmark_path(bookmark), method: :delete do %>
-          <i class="icon far fa-solid fa-bookmark"></i>
-        <% end %>
-      </div>
-    <% end %>
+<div class='show-container'>
+  <%= render "posts/sidebar" %>
+  <div class='container'>
+    <h2 style='color: black; text-shadow: none; margin: 36px 0px'>My Bookmarks</h2>
+    <div class="mid-column">
+      <% @user_bookmarks.each do |bookmark| %>
+          <div class="post-text">
+            <%= link_to post_path(bookmark.post) do %>
+              <h2 style="color: black; text-decoration: none; text-shadow: none"><%= bookmark.post.title %></h2>
+              <p style="color: black; text-decoration: none; text-shadow: none"><%= bookmark.post.blurb %></p>
+            <% end %>
+          </div>
+        <div id="icons-top-right">
+          <div class="icon btn btn-primary">
+            <%= link_to bookmark_path(bookmark), method: :delete do %>
+              <i class="fas fa-solid fa-bookmark"></i>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
