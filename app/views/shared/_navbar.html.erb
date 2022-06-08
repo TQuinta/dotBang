@@ -1,51 +1,26 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <%= link_to "/", class: "navbar-brand" do %>
-      dotBang
-    <% end %>
-    <%= link_to posts_path, class: "navbar-brand" do %>
-      bangBack
-    <% end %>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to "Messages", "/chatrooms", class: "nav-link" %>
+<div class="navbar-home container">
+  <p> <%= user_signed_in? ? "Welcome back #{current_user.first_name.capitalize}!" : "Welcome to dotBang!" %></p>
+  <div class="login">
+    <% if user_signed_in? %>
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item dropdown">
+            <% profile = current_user.profile %>
+            <% url = profile.nil? ? "https://serc.carleton.edu/download/images/54334/empty_user_icon_256.v2.png" : profile.avatar_url %>
+              <%= image_tag "#{url}", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <% if profile.nil? %>
+                  <%= link_to "Create Profile!", new_profile_path, class: "dropdown-item" %>
+                <% else %>
+                  <%= link_to "Bookmarks!", bookmarks_path, class: "dropdown-item" %>
+                  <%= link_to "Create a post!", new_post_path, class: "dropdown-item" %>
+                <% end %>
+                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+              </div>
           </li>
-          <% profile = User.find(current_user.id).profile %>
-          <% if profile.nil? %>
-            <%= image_tag "https://serc.carleton.edu/download/images/54334/empty_user_icon_256.v2.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <% if current_user.profile.nil? %>
-                <%= link_to "Create Profile", new_profile_path, class: "dropdown-item" %>
-              <% else %>
-                <%= link_to "My Profile", profile_path(current_user.profile), class: "dropdown-item" %>
-              <% end %>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-            </div>
-          <% else %>
-            <% url = User.find(current_user.id).profile.avatar_url %>
-            <%= image_tag "#{url}", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <% if current_user.profile.nil? %>
-                <%= link_to "Create Profile", new_profile_path, class: "dropdown-item" %>
-              <% else %>
-                <%= link_to "My Profile", profile_path(current_user.profile), class: "dropdown-item" %>
-              <% end %>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-            </div>
-          <% end %>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
+        </ul>
+    <% else %>
+      <a href="/users/sign_in">Login</a>
+      <a href="/users/sign_up" id="sign-up">Sign up</a>
+    <% end %>
   </div>
 </div>

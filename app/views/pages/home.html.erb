@@ -1,44 +1,10 @@
-<div data-controller="home-scroll" data-home-scroll-target="body">
+<div class="section" data-controller="home-scroll" data-home-scroll-target="body">
   <div class="bg"></div>
   <div class="bg bg2"></div>
   <div class="bg bg3"></div>
-  <div class="navbar-home">
-    <p> Welcome to dotBang!</p>
-    <div class="login">
-      <% if user_signed_in? %>
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item dropdown">
-              <% profile = User.find(current_user.id).profile %>
-              <% if profile.nil? %>
-                <%= image_tag "https://serc.carleton.edu/download/images/54334/empty_user_icon_256.v2.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                  <% if current_user.profile.nil? %>
-                    <%= link_to "Create Profile", new_profile_path, class: "dropdown-item" %>
-                  <% else %>
-                    <%= link_to "My Profile", profile_path(current_user.profile), class: "dropdown-item" %>
-                  <% end %>
-                  <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-                </div>
-              <% else %>
-                <% url = User.find(current_user.id).profile.avatar_url %>
-                <%= image_tag "#{url}", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                  <% if current_user.profile.nil? %>
-                    <%= link_to "Create Profile", new_profile_path, class: "dropdown-item" %>
-                  <% else %>
-                    <%= link_to "My Profile", profile_path(current_user.profile), class: "dropdown-item" %>
-                  <% end %>
-                  <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-                </div>
-              <% end %>
-            </li>
-          </ul>
-      <% else %>
-        <a href="/users/sign_in">Login</a>
-        <a href="/users/sign_up" id="sign-up">Sign up</a>
-      <% end %>
-    </div>
-  </div>
+
+  <%= render "shared/navbar" %>
+
   <div class="container">
     <div class="content">
       <div class="semi-content">
