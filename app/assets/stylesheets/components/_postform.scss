@@ -20,12 +20,12 @@
   border: 1px solid #EAEAEA;
   border-radius: 4px;
   background-color: white;
+  margin-left: 15px;
 }
 
 .tag-selector:checked + label {
   color: white !important;
 }
-
 
 #tag_tag_roles + label {
   color: #E9C46A;
@@ -34,6 +34,7 @@
   border-bottom: 0;
   border-right: 0;
   font-size: 22px;
+  margin-right: 15px;
 }
 
 #tag_tag_roles:checked + label {
