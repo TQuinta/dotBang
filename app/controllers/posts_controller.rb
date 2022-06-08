@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   before_action :set_role, only: :create, if: :role?
   before_action :set_params, only: %i[show]
   before_action :set_vote, only: %i[show]
+  before_action :store_last_index_page, only: %i[index show new]
 
   def show
     @author = Profile.find_by(user_id: @post.user_id)
@@ -46,7 +47,6 @@ class PostsController < ApplicationController
 #     puts "No posts related to your search"
 #   end
 # end
-
 
   private
 

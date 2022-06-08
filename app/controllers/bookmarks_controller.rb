@@ -1,4 +1,6 @@
 class BookmarksController < ApplicationController
+  before_action :store_last_index_page, only: %i[index]
+
   def index
     @user_bookmarks = Bookmark.where(user: current_user)
   end
