@@ -28,11 +28,13 @@
         <h3>City</h3>
         <p><%= @author.city %></p>
       </div>
-      <div class="links top-margin">
-        <h3>Follow me</h3>
-         <p><%=  @author.GitHub_url %></p>
-         <p><%=  @author.LinkedIn_url %></p>
-         <p><%=  @author.Twitter_url %></p>
-      </div>
+      <% if !@author.GitHub_url.nil? && !@author.LinkedIn_url.nil? && !@author.Twitter_url.nil?%>
+        <div class="links top-margin">
+          <h3>Follow me</h3>
+          <p><%=  @author.GitHub_url %></p>
+          <p><%=  @author.LinkedIn_url %></p>
+          <p><%=  @author.Twitter_url %></p>
+        </div>
+      <%end%>
     </div>
 </div>
