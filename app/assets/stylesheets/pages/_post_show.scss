@@ -12,8 +12,6 @@
 .mid-column {
   justify-content: space-between;
   background-color: white;
-  align-items: stretch;
-  position: relative;
   padding-top: 5%;
   // flex: 1 0 auto; this is causing the issue of the text going too wide. However, need to still check how to make it reactive.
   // suggest adding padding around the text as well.
