@@ -1,17 +1,19 @@
 <% if !@comments.nil? %>
   <div class="comment-box">
     <h2>Community Comments</h2>
-    <% @comments.each do |comment| %>
-      <div class="comment-box-flex">
-        <div class="comment-box-name">
-          <h3><%= comment.user.first_name.capitalize %></h3>
+    <% @comments.sort_by { |comment| comment.created_at }.reverse.each do |comment| %>
+      <div id="comment-<%= comment.id %>">
+        <div class="comment-box-flex">
+          <div class="comment-box-name">
+            <h3><%= comment.user.first_name.capitalize %></h3>
+          </div>
+          <div class="comment-box-date">
+            <p>created: <%= comment.created_at %></p>
+          </div>
         </div>
-        <div class="comment-box-date">
-          <p>created: <%= comment.created_at %></p>
+        <div class="comment-box-text">
+          <p><%= comment.text %></p>
         </div>
-      </div>
-      <div class="comment-box-text">
-        <p><%= comment.text %></p>
       </div>
     <% end %>
   </div>
