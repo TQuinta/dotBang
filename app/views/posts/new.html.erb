@@ -1,47 +1,50 @@
-<%= render "shared/navbar" %>
-<div class='index-container'>
-  <div data-controller='select-category'>
-    <%= simple_form_for(@post) do |f| %>
 
-      <%= simple_fields_for :tag do |n| %>
-      <%= n.input :tag,
-                  as: :radio_buttons,
-                  collection_wrapper_tag: 'div',
-                  collection_wrapper_class: 'tag-wrapper',
-                  item_wrapper_class: 'tag-item',
-                  input_html: {class: 'tag-selector', data: { action:"click->select-category#showDropdown" }},
-                  collection: Post::CATEGORIES %>
+<div class='show-container'>
+  <%= render "sidebar" %>
+  <div class='container'>
+    <h2 style='color: black; text-shadow: none; margin: 36px 0px'>Create your post here</h2>
+    <div data-controller='select-category'>
+      <%= simple_form_for(@post) do |f| %>
 
-      <div class="d-none" data-select-category-target="skills">
-        <%= n.input :postableSkills,
-                    label:"Skills",
-                    collection: Skill.all,
-                    as: :select
-        %>
-    </div>
-    <div class="d-none" data-select-category-target="roles">
-        <%= n.input :postableRoles,
-                    label:"Roles",
-                    collection: Role.all,
-                    as: :select
-      %>
+        <%= simple_fields_for :tag do |n| %>
+        <%= n.input :tag,
+                    as: :radio_buttons,
+                    collection_wrapper_tag: 'div',
+                    collection_wrapper_class: 'tag-wrapper',
+                    item_wrapper_class: 'tag-item',
+                    input_html: {class: 'tag-selector', data: { action:"click->select-category#showDropdown" }},
+                    collection: Post::CATEGORIES %>
+
+        <div class="d-none" data-select-category-target="skills">
+          <%= n.input :postableSkills,
+                      label:"Skills",
+                      collection: Skill.all,
+                      as: :select
+          %>
       </div>
+        <div class="d-none" data-select-category-target="roles">
+            <%= n.input :postableRoles,
+                        label:"Roles",
+                        collection: Role.all,
+                        as: :select
+          %>
+        </div>
+        <% end %>
+
+        <div class="post-title" data-select-category-target="roles">
+          <%= f.input :title, label:"Title of your article"%>
+        </div>
+        <div class="post-blurb" data-select-category-target="roles">
+          <%= f.input :blurb, label:"Interesting headline to captivate users"%>
+        </div>
+
+        <div class="post-content" data-select-category-target="roles">
+          <%= f.rich_text_area :rich_content, label:"Your article goes here!"%>
+        </div>
+        <div class="post-submit">
+          <%= f.submit %>
+        </div>
       <% end %>
-
-      <div class="post-title" data-select-category-target="roles">
-        <%= f.input :title, label:"Title of your article"%>
-      </div>
-      <div class="post-blurb" data-select-category-target="roles">
-        <%= f.input :blurb, label:"Interesting headline to captivate users"%>
-      </div>
-           <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-
-      <div class="post-content" data-select-category-target="roles">
-        <%= f.rich_text_area :rich_content, label:"Your article goes here!"%>
-      </div>
-      <div class="post-submit">
-        <%= f.submit %>
-      </div>
-    <% end %>
+    </div>
   </div>
 </div>
