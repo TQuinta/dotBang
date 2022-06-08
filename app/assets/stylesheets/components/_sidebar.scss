@@ -7,10 +7,6 @@
   align-content: center;
   width: 100px;
   padding: 8px;
-  position: sticky;
-  top: 30%;
-  bottom: 30%
-  // height: 100vh;
 }
 
 .sidebar {
@@ -22,9 +18,8 @@
   justify-content: center;
   width: 100px;
   position: sticky;
-  top: 30%;
-  bottom: 30%;
-  // height: 100vh;
+  top: 0;
+  height: 100vh;
   border-right: 4px solid #74b2e0;
 }
 
