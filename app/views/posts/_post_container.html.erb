@@ -1,5 +1,6 @@
-                <div class="post-container">
+  <div class="post-container">
                   <div class="post">
+
                     <div class="post-content"  >
                       <div class="post-text">
                         <h2> <%= post.title %> </h2>
@@ -7,7 +8,7 @@
                       </div>
                     </div>
                     <% if Profile.find_by(user_id: post.user_id).avatar_url %>
-                      <%= image_tag Profile.find_by(user_id: post.user_id).avatar_url, alt: "" , width: 200, id:"post-avatar"  %>
+                      <%= image_tag Profile.find_by(user_id: post.user_id).avatar_url, alt: "Le Wagon", width: 200, id:"post-avatar"  %>
                     <% else %>
                       <%= image_tag "https://uploads.sitepoint.com/wp-content/uploads/2017/03/1488480428eloquent-js.jpg",  class: "card-trip-user " %>
                     <% end %>
@@ -15,7 +16,7 @@
                   <div class= "post-details">
                       <p class="skew-fix">Votes: <%= post.votes.count %></p>
                       <div class="icon--default btn btn-primary" id="bookmark-icon">
-                        <%= render "bookmark", post: post, bookmark: current_user.bookmark_for(post) %>
+                        <%= render "posts/bookmark", post: post, bookmark: current_user.bookmark_for(post) %>
                       </div>
 
                       <div class= "author">
@@ -23,3 +24,4 @@
                         <p><strong><%= user.first_name %> <%= user.last_name %></strong>,  <%= post.created_at.strftime("%Y-%m-%d")%></p>
                       </div>
                   </div>
+                </div>
