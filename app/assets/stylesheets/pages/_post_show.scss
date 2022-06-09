@@ -22,15 +22,17 @@
   justify-content: space-between;
   border-left: 0.3px solid #807b7b;
   background-color: white;
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  //background-color: rgba(255, 255, 255, 0.06);
-  align-items: stretch;
-  position: relative;
-  width: 500px;
+    /* align-items: stretch; */
+    /* position: relative; */
+    /* width: 500px; */
   padding-left: 30px;
   padding-right: 30px;
   padding-bottom: 30px;
   padding-top: 0px;
+  transition: 1.5s ease;
+
   .name-and-avatar {
     display:flex;
     align-items: start;
@@ -51,10 +53,9 @@
   }
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.06);
+    background-color: rgba(225,225,225,1);
     transition: 1.5s ease;
   }
-  transition: 1.5s ease;
 }
 
 .author-card {

@@ -6,7 +6,7 @@
   <div class="results-container" data-select-category-target="results">
     <div class="row justify-content-center">
       <div class="col-sm-8">
-          <h1><%=  User.find(@profile.user_id).first_name %> <%=User.find(@profile.user_id).last_name %></h1>
+          <h1 style='font-size: 37px; margin-top: 29px; margin-bottom: 20px;'><%=  User.find(@profile.user_id).first_name %> <%=User.find(@profile.user_id).last_name %></h1>
           <% User.find(@profile.user_id).posts.sort_by { |post| post.votes.count }.reverse.each do |post| %>
             <%= link_to post_path(post), class: "text-decoration-none content-card-width"  do %>
             <%= render "posts/post_container", post: post %>
@@ -16,47 +16,5 @@
     </div>
   </div>
 
-  <div class="right-column">
-
-    <div class="author-card">
-      <h2>About the Author</h2>
-      <div class="name-and-avatar top-margin">
-        <% if @profile.nil? %>
-          <%= image_tag "https://serc.carleton.edu/download/images/54334/empty_user_icon_256.v2.png", width:200, id: "post-avatar" %>
-        <% else %>
-          <%= image_tag @profile.avatar_url, alt: "Le Wagon", width: 200, id:"post-avatar"  %>
-        <% end %>
-        <div class="name-position">
-          <h3><%=  User.find(@profile.user_id).first_name %> <%=User.find(@profile.user_id).last_name %></h3>
-          <p><%= @profile.current_role %></p>
-        </div>
-        </div>
-        <div class="description top-margin">
-        <h3>Description</h3>
-          <p><%= @profile.description %></p>
-        </div>
-        <div class="years-experience top-margin">
-          <h3>Years of experience</h3>
-          <p><%= @profile.years_of_experience %></p>
-        </div>
-        <div class="credentials top-margin">
-          <h3>Credentials</h3>
-          <p><%= @profile.credentials %></p>
-        </div>
-        <div class="city top-margin">
-          <h3>City</h3>
-          <p><%= @profile.city %></p>
-        </div>
-        <% if !@profile.GitHub_url.nil? && !@profile.LinkedIn_url.nil? && !@profile.Twitter_url.nil?%>
-          <div class="links top-margin">
-            <h3>Follow me</h3>
-            <p><%=  @profile.GitHub_url %></p>
-            <p><%=  @profile.LinkedIn_url %></p>
-            <p><%=  @profile.Twitter_url %></p>
-          </div>
-        <%end%>
-    </div>
-    </div>
-
-  </div>
+  <%= render "posts/author_infos" %>
 </div>
