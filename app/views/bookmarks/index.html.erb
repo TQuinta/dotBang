@@ -1,23 +1,22 @@
-<div class='show-container'>
+<div class='show-container bookmarks-background'>
+<div class="index-container bookmark-blur">
   <%= render "posts/sidebar" %>
   <div class='container'>
-    <h2 style='color: black; text-shadow: none; margin: 36px 0px'>My Bookmarks</h2>
-    <div class="mid-column">
-      <% @user_bookmarks.each do |bookmark| %>
-          <div class="post-text">
-            <%= link_to post_path(bookmark.post) do %>
-              <h2 style="color: black; text-decoration: none; text-shadow: none"><%= bookmark.post.title %></h2>
-              <p style="color: black; text-decoration: none; text-shadow: none"><%= bookmark.post.blurb %></p>
+    <h2 style='color: black; text-shadow: none; margin: 36px 0px; text-align:center; color: white; text-shadow: 1px 1px 4px #292828;'>
+      My Bookmarks
+    </h2>
+    <div class="results-container" data-select-category-target="results">
+      <div class="row justify-content-center">
+        <div class="col-sm-8">
+            <% @user_bookmarks.sort_by { |bookmark| bookmark.post.votes.count }.reverse.each do |bookmark| %>
+              <% post = bookmark.post %>
+              <%= link_to post_path(post), class: "text-decoration-none content-card-width"  do %>
+                <%= render "posts/post_container", post: post %>
+              <% end %>
             <% end %>
-          </div>
-        <div id="icons-top-right">
-          <div class="icon btn btn-primary">
-            <%= link_to bookmark_path(bookmark), method: :delete do %>
-              <i class="fas fa-solid fa-bookmark"></i>
-            <% end %>
-          </div>
         </div>
-      <% end %>
+      </div>
     </div>
   </div>
+</div>
 </div>
