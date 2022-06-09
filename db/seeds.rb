@@ -1498,6 +1498,35 @@ skill.save!
 puts "#{skill.name} created"
 
 puts "---------------------"
+puts "Adding Olwyn Hogan"
+puts "---------------------"
+
+user = User.new(
+  first_name: "Olwyn",
+  last_name: "Hogan",
+  email: "olwyn@mail.com",
+  username: "olwynhogan",
+  password: "123456"
+)
+user.save!
+puts "#{user.first_name} created"
+
+profile = Profile.new(
+  avatar_url: "https://avatars.githubusercontent.com/u/101358936?v=4",
+  user: user,
+  GitHub_url: "https://github.com/OlwynH",
+  LinkedIn_url: "https://www.linkedin.com/in/olwynhogan/",
+  description: "Career changer to become BEST DEVELOPER EVER",
+  credentials: "Le Wagon alumni",
+  years_of_experience: 0,
+  city: "Remote",
+  current_role: "Student"
+)
+
+profile.save!
+puts "Profile created for #{profile.user.first_name}"
+
+puts "---------------------"
 puts ""
 puts "--- fin ---"
 puts ""
