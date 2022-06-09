@@ -98,3 +98,8 @@ text-decoration: none;
 .text-decoration-none  {
   width: 87vh;
 }
+.col-sm-8 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
