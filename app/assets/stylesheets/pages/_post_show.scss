@@ -62,10 +62,11 @@
   h2, h3{
     color: black;
     text-shadow: none;
+    font-weight:bold;
   }
   h2 {
     font-size: 22px;
-    font-weight: 200;
+    font-weight: bold;
   }
   h3 {
     font-size: 15px;
@@ -151,7 +152,8 @@
     font-family: 'Poppins', sans-serif !important;
     font-size: 32px;
     text-shadow: none;
-    color:black
+    color:black;
+    font-weight: 200px;
   }
 }
 
