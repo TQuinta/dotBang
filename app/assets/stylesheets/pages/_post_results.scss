@@ -5,7 +5,7 @@
   flex: 1 0 auto;
   display: flex;
   backdrop-filter: blur(4px);
-  background-color: rgba(255, 255, 255, 0.45);
+  background-color: rgba(255, 255, 255, 0.35);
   min-height: 100vh;
 
   #select-margin {
@@ -18,7 +18,9 @@
   background-attachment: fixed;
   background-size: 100vh;
 }
-
+.mb-3 {
+  margin-top: 40px !important;
+}
 #results {
   color: #3f3f3f;
   text-shadow: none;
@@ -31,16 +33,19 @@
 
 .post-container{
   padding: 15px;
-  width: 700px;
+  width: 805px;
   transform: skew(-20deg);
+  -webkit-backdrop-filter: blur(1rem);
   backdrop-filter: blur(1rem);
-  margin: 1.5em 0;
+  margin: 10px 0;
   padding-top: 0;
   background-color: rgba(255, 255, 255, 0.18);
   box-shadow: rgba(99,99,99,0.2) 0px 2px 8px 0px;
-  position:relative;
+  position: relative;
   display: flex;
   justify-content: space-between;
+  height: 157px;
+  padding-bottom: 0;
   &:hover {
     box-shadow: #74b2e0 2px 2px 7px 0px;
   }
@@ -49,10 +54,10 @@
 
 .post-details {
   position: relative;
-  padding-top: 5%;
+  padding-top: 2%;
   display: flex;
   flex-direction: column;
-  width: 11vh;
+  width: 17vh;
   justify-content: space-between;
   p {
     color: #3f3f3f;
@@ -68,5 +73,5 @@
 #bookmark-icon {
   position: absolute;
   right: 0px;
-  top: 73px;
+  top: 55px;
 }

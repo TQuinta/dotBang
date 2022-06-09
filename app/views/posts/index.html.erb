@@ -52,7 +52,6 @@
               <h1 id="results">No posts at the moment 🙁</h1>
             <% elsif params[:type].present? %>
               <div class="posts-title">
-                <h1 id="results">Results</h1>
               </div>
               <% @posts.sort_by { |post| post.votes.count }.reverse.each do |post| %>
                 <%= link_to post_path(post), class: "text-decoration-none content-card-width"  do %>
