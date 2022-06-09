@@ -300,16 +300,26 @@ h3 {
   background-color: #dab96880;
   font-family: 'Poppins', sans-serif !important;
   font-weight: 200;
-  font-size: 60px;
+  font-size: 36px;
   text-shadow: none;
   color: black;
-  text-shadow: none
+  margin: 36px 0px;
 }
 
 .header-container-login {
   background-image: url("blue.png");
   background-size: cover;
   margin-top: 10%;
+}
+
+.title-signup-shadow-blue {
+  background-color: #64819270;
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 200;
+  font-size: 36px;
+  text-shadow: none;
+  color: black;
+  margin: 36px 0px;
 }
 // @media screen and (max-height: 631px) {
 //   .skills-btn-small {

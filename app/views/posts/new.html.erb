@@ -2,17 +2,26 @@
 <div class='show-container'>
   <%= render "sidebar" %>
   <div class='container'>
-      <h2 style='color: black; text-shadow: none; margin: 36px 0px'>Create your post here!</h2>
+    <div class ="header-container-createpost">
+      <div class="header-container-blur-createpost">
+        <span class="title-createpost-shadow-yellow">
+          Create your own post here!
+        </span>
+      </div>
+    </div>
     <div data-controller='select-category'>
       <%= simple_form_for(@post) do |f| %>
 
-        <%= simple_fields_for :tag do |n| %>
-        <%= n.input :tag,
+        <%= simple_fields_for :tg do |n| %>
+        <%= n.input :tg,
                     as: :radio_buttons,
                     collection_wrapper_tag: 'div',
-                    collection_wrapper_class: 'tag-wrapper',
-                    item_wrapper_class: 'tag-item',
-                    input_html: {class: 'tag-selector', data: { action:"click->select-category#showDropdown" }},
+                    collection_wrapper_class: 'tg-wrapper',
+                    item_wrapper_class: 'tg-item',
+                    label: '',
+                    label_method: lambda { |text| "<span >#{text}</span>".html_safe },
+                    required: false,
+                    input_html: {class: 'tg-selector', data: { action:"click->select-category#showDropdown" }},
                     collection: Post::CATEGORIES %>
 
         <div class="d-none" data-select-category-target="skills">
