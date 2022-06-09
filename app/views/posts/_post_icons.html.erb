@@ -13,15 +13,7 @@
       <i class="far fa-comment-alt"></i>
     <% end %>
   </div>
-  <div class="icon btn btn-primary">
-    <% if @bookmark.persisted? %>
-      <%= link_to bookmark_path(@bookmark), method: :delete do %>
-        <i class="fas fa-solid fa-bookmark"></i>
-      <% end %>
-    <% else %>
-      <%= link_to post_bookmarks_path(@post), method: :post, data: {user: current_user} do %>
-        <i class="far fa-bookmark"></i>
-      <% end %>
-    <% end %>
+  <div class="icon btn btn-primary upvote-button">
+    <%= render "bookmark" %>
   </div>
 </div>

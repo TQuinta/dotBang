@@ -8,15 +8,31 @@ class BookmarksController < ApplicationController
   def create
     @bookmark = Bookmark.new
     @bookmark.user = current_user
+    @post = Post.find(params[:post_id])
     @bookmark.post = Post.find(params[:post_id])
-    redirect_back(fallback_location: post_path(@bookmark.post))
-    flash[:alert] = 'Please try again!' unless @bookmark.save
+    @bookmark.save
+    respond_to do |format|
+      format.html { redirect_back(fallback_location: post_path(@bookmark.post)) }
+      format.json do
+        render json: {
+          button_html: render_to_string(partial: "posts/bookmark", locals: { post: @post }, formats: [:html])
+        }
+      end
+    end
   end
 
   def destroy
     @bookmark = Bookmark.find(params[:id])
+    @post = @bookmark.post
     @bookmark.destroy
-    redirect_back(fallback_location: post_path(@bookmark.post))
+    respond_to do |format|
+      format.html { redirect_back(fallback_location: post_path(@bookmark.post))}
+      format.json do
+        render json: {
+          button_html: render_to_string(partial: "posts/bookmark", locals: { post: @post }, formats: [:html])
+        }
+      end
+    end
     @bookmark = nil
   end
 end
