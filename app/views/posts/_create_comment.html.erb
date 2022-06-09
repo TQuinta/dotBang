@@ -1,6 +1,5 @@
-<div id="new-comment" class="new-comment-box">
-  <%= simple_form_for [ @post, @comment ] do |f| %>
+  <%= simple_form_for [ post, comment ],
+      data: { action: "submit->comments#postComment", comments_target: "form" } do |f| %>
   <%= f.input :text, label: "Leave your comments here!" %>
   <%= f.submit %>
   <% end %>
-</div>

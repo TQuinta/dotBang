@@ -5,11 +5,6 @@ import { csrfToken } from "@rails/ujs"
 export default class extends Controller {
   static targets = [ "button" ]
 
-  connect() {
-    console.log("hello")
-    console.log(this.buttonTarget)
-  }
-
   toggle(event) {
     event.preventDefault()
     event.stopPropagation()

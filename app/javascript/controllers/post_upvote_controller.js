@@ -3,11 +3,6 @@ import { Controller } from "stimulus"
 export default class extends Controller {
   static targets = [ "button", "count" ]
 
-  connect() {
-    console.log("Hello")
-    console.log(this.buttonTarget)
-  }
-
   toggle(event) {
     event.preventDefault()
     const url = this.buttonTarget.action
