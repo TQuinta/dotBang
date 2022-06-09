@@ -9,7 +9,7 @@
             <%= image_tag @author.avatar_url, alt: "Le Wagon", width: 200, id:"post-avatar"  %>
           <% end %>
           <div class="name-position">
-            <h3><%= @post.user.first_name %> <%= @post.user.last_name %></h3>
+            <h3><%= @author.user.first_name %> <%= @author.user.last_name %></h3>
             <p><%= @author.current_role %></p>
           </div>
         </div>
