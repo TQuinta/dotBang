@@ -1,7 +1,12 @@
 <div class='show-container'>
   <div class='container'>
-
-    <h2 style='color: black; text-shadow: none; margin: 36px 0px'>Log in</h2>
+    <div class ="header-container-login">
+      <div class="header-container-blur">
+        <span class="title-signup-shadow-yellow>">
+          <h2 style='color: black; text-shadow: none; margin: 36px 0px'>Log in</h2>
+        </span>
+      </div>
+    </div>
 
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs">

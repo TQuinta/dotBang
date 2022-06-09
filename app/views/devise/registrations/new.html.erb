@@ -1,6 +1,12 @@
 <div class='show-container'>
   <div class='container'>
-    <h2 style='color: black; text-shadow: none; margin: 36px 0px'>Sign up</h2>
+    <div class ="header-container-signup">
+      <div class="header-container-blur">
+        <span class="title-signup-shadow-yellow>">
+          <h2 style='color: black; text-shadow: none;'>Sign up</h2>
+        </span>
+    </div>
+      </div>
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>

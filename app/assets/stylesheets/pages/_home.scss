@@ -286,6 +286,31 @@ h3 {
     margin-left: 8rem;
   }
 }
+
+//Signup page
+
+.header-container-signup {
+  background-image: url("yellow.png");
+  background-size: cover;
+  margin-top: 10%;
+
+}
+
+.title-signup-shadow-yellow {
+  background-color: #dab96880;
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 200;
+  font-size: 60px;
+  text-shadow: none;
+  color: black;
+  text-shadow: none
+}
+
+.header-container-login {
+  background-image: url("blue.png");
+  background-size: cover;
+  margin-top: 10%;
+}
 // @media screen and (max-height: 631px) {
 //   .skills-btn-small {
 //     position: absolute;
