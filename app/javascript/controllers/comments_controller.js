@@ -19,6 +19,7 @@ export default class extends Controller {
       console.log(data)
       this.commentsTarget.insertAdjacentHTML('afterbegin', data.comment_html)
       this.formTarget.outerHTML = data.form_html
+      this.commentsTarget.scrollIntoView()
       // if (data.inserted_item) {
       //   this.itemsTarget.insertAdjacentHTML("beforeend", data.inserted_item)
       // }
