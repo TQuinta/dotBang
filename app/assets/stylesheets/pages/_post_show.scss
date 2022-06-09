@@ -32,7 +32,9 @@
   padding-bottom: 30px;
   padding-top: 0px;
   transition: 1.5s ease;
-
+  position: sticky;
+  top: 0;
+  height: 100vh;
   .name-and-avatar {
     display:flex;
     align-items: start;
