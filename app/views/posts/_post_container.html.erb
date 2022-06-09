@@ -16,7 +16,11 @@
                   <div class= "post-details">
                       <p class="skew-fix">Votes: <%= post.votes.count %></p>
                       <div class="icon--default btn btn-primary" id="bookmark-icon">
-                        <%= render "posts/bookmark", post: post, bookmark: current_user.bookmark_for(post) %>
+                        <% if current_page?(bookmarks_path) %>
+                          <%= render "posts/no_ajax_bookmark", post: post, bookmark: current_user.bookmark_for(post) %>
+                        <% else %>
+                          <%= render "posts/bookmark", post: post, bookmark: current_user.bookmark_for(post) %>
+                        <% end %>
                       </div>
 
                       <div class= "author">
