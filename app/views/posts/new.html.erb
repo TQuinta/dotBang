@@ -19,7 +19,7 @@
                     collection_wrapper_class: 'tg-wrapper',
                     item_wrapper_class: 'tg-item',
                     label: '',
-                    label_method: lambda { |text| "<span >#{text}</span>".html_safe },
+                    label_method: lambda { |text| "<span class='skew-fix'>#{text}</span>".html_safe },
                     required: false,
                     input_html: {class: 'tg-selector', data: { action:"click->select-category#showDropdown" }},
                     collection: Post::CATEGORIES %>
