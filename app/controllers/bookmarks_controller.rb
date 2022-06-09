@@ -15,7 +15,7 @@ class BookmarksController < ApplicationController
       format.html { redirect_back(fallback_location: post_path(@bookmark.post)) }
       format.json do
         render json: {
-          button_html: render_to_string(partial: "posts/bookmark", locals: { post: @post }, formats: [:html])
+          button_html: render_to_string(partial: "posts/bookmark", locals: { post: @post, bookmark: @bookmark }, formats: [:html])
         }
       end
     end
@@ -29,7 +29,7 @@ class BookmarksController < ApplicationController
       format.html { redirect_back(fallback_location: post_path(@bookmark.post))}
       format.json do
         render json: {
-          button_html: render_to_string(partial: "posts/bookmark", locals: { post: @post }, formats: [:html])
+          button_html: render_to_string(partial: "posts/bookmark", locals: { post: @post, bookmark: nil }, formats: [:html])
         }
       end
     end
