@@ -1,0 +1,19 @@
+<div data-controller="bookmarks">
+  <% if @bookmark && @bookmark.persisted? %>
+    <%= link_to bookmark_path(@bookmark), method: :delete, class: "bookmark", data: {
+            bookmarks_target: "button",
+            action: "click->bookmarks#toggle",
+            turbolinks: false
+          } do %>
+          <i class="fas fa-solid fa-bookmark"></i>
+    <% end %>
+  <% else %>
+    <%= link_to post_bookmarks_path(@post), method: :post, class: "bookmark", data: {
+            bookmarks_target: "button",
+            action: "click->bookmarks#toggle",
+            turbolinks: false
+          } do %>
+          <i class="far fa-bookmark"></i>
+    <% end %>
+  <% end %>
+</div>

@@ -9,18 +9,18 @@
       <% end %>
 
       <div class="hidden popup" id="home" data-sidebar-link-target="popup">
-        <p class="popup-text">Home</p>
+        <p class="popup-text">bangHome</p>
       </div>
     </div>
 
    <div class="sidebar-link" data-controller="sidebar-link" data-action="mouseover->sidebar-link#enter mouseout->sidebar-link#leave" >
-     <%= link_to :back, class: "icon btn btn-primary",
+     <%= link_to posts_path, class: "icon btn btn-primary",
      data: { sidebar_link_target: "link" } do %>
      <i class="fas fa-arrow-left"></i>
        <% end %>
 
-      <div class="hidden popup" data-sidebar-link-target="popup">
-        <p class="popup-text">Back</p>
+      <div class="hidden popup" id="bback" data-sidebar-link-target="popup">
+        <p class="popup-text">bangBack</p>
       </div>
     </div>
 
@@ -38,7 +38,7 @@
     <%# make id for this to make my bookmarks look better %>
 
    <div class="sidebar-link" data-controller="sidebar-link" data-action="mouseover->sidebar-link#enter mouseout->sidebar-link#leave" >
-       <%= link_to user_signed_in? ? "/posts/new" : new_user_session_path, class: "icon btn btn-primary" do %>
+       <%= link_to user_signed_in? ? "/posts/new" : new_user_session_path, class: "icon btn btn-primary", data: { sidebar_link_target: "link" } do %>
          <i class="far fa-edit"></i>
          <% end %>
 
