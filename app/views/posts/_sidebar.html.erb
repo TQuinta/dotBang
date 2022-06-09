@@ -14,7 +14,7 @@
     </div>
 
    <div class="sidebar-link" data-controller="sidebar-link" data-action="mouseover->sidebar-link#enter mouseout->sidebar-link#leave" >
-     <%= link_to posts_path, class: "icon btn btn-primary",
+     <%= link_to :back, class: "icon btn btn-primary",
      data: { sidebar_link_target: "link" } do %>
      <i class="fas fa-arrow-left"></i>
        <% end %>

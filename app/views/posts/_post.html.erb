@@ -18,15 +18,17 @@
         <%= render "post_icons" %>
 
       </div>
-      
+
       <div class="text-container">
         <p><%= @post.rich_content %></p>
       </div>
-      
-      <div>
-        <%= render "create_comment" %>
+
+      <div data-controller="comments">
+        <div id="new-comment" class="new-comment-box">
+          <%= render "create_comment", post: @post, comment: @comment %>
+        </div>
         <%= render "comments" %>
       </div>
-      
+
     </div>
  </div>
