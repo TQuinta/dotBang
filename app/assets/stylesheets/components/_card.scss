@@ -12,13 +12,13 @@
 
   h1 {
     margin: 0;
-    font-weight: bold;
+    font-weight: 200px;
   }
 }
 
 .post {
   overflow: hidden;
-  height: 180px;
+  height: 161px;
   display: flex;
   align-items: center;
   -webkit-backdrop-filter: blur(1rem);
@@ -33,7 +33,7 @@
 
   h2 {
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 200px;
   }
 
   p {
@@ -42,8 +42,7 @@
   }
   img {
     height: 41%;
-    width: 85px;
-    margin-right: 10px;
+    width: auto;
     border-radius: 50%;
     -o-object-fit: cover;
     object-fit: cover;
@@ -85,6 +84,8 @@ text-decoration: none;
   text-shadow: 1px 1px 1px #f3f3f3;
   p {
     font-size: 8px ;
+    margin-bottom: 7px;
+    margin-right: 8px;
   }
 }
 
@@ -96,10 +97,11 @@ text-decoration: none;
   color: white;
 }
 .text-decoration-none  {
-  width: 87vh;
+  width: 100vh;
 }
 .col-sm-8 {
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin-top: -25px;
 }
