@@ -73,15 +73,7 @@
                   <div class= "post-details">
                       <p class="skew-fix">Votes: <%= post.votes.count %></p>
                       <div class="icon--default btn btn-primary" id="bookmark-icon">
-                        <% if current_user.bookmark_for(post) %>
-                          <%= link_to bookmark_path(current_user.bookmark_for(post)), method: :delete do %>
-                            <i class="fas fa-solid fa-bookmark"></i>
-                          <% end %>
-                        <% else %>
-                          <%= link_to post_bookmarks_path(post), method: :post, data: {user: current_user} do %>
-                            <i class="far fa-bookmark"></i>
-                          <% end %>
-                        <% end %>
+                        <%= render "bookmark", post: post, bookmark: current_user.bookmark_for(post) %>
                       </div>
 
                       <div class= "author">

@@ -3,10 +3,6 @@ import { Controller } from "stimulus"
 export default class extends Controller {
   static targets = ["body", "role", "skill"]
 
-  connect() {
-    console.log("Hello from our first Stimulus controller")
-  }
-
   roleScroll(event) {
     event.preventDefault()
     this.bodyTarget.parentElement.classList.add("yellow-background")
