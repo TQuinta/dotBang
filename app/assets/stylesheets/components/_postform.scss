@@ -35,6 +35,7 @@
   border-right: 0;
   font-size: 22px;
   margin-right: 15px;
+  // transform: skew(-20deg);
 }
 
 #tag_tag_roles:checked + label {
@@ -51,6 +52,7 @@
   border-left: 0;
   font-size: 22px;
   margin-right:0px;
+  // transform: skew(-20deg);
 }
 
 #tag_tag_skills:checked + label {
