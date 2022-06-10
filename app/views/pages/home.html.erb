@@ -32,7 +32,7 @@
           <p class="skew-fix">
           </p>
           <div class="tags">
-            <% Role.all.each do |role| %>
+            <% Role.all.first(4).each do |role| %>
               <%= link_to posts_path(type: "Role", postable_id: role.id),
                 class: "tag-btns role-tag #{ 'active' if role == @postable }",
                 data: {action:"click->select-category#showSearch"}  do %>
@@ -55,7 +55,7 @@
           <p class="skew-fix">
           </p>
           <div class="tags">
-            <% Skill.all.each do |skill| %>
+            <% Skill.all.first(4).each do |skill| %>
               <%= link_to posts_path(type: "Skill", postable_id: skill.id),
                 class: "tag-btns skill-tag #{ 'active' if skill == @postable }",
                 data: {action:"click->select-category#showSearch"} do %>

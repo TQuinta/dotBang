@@ -1,1 +1,20 @@
-<h1>Welcome back <%= @profile.user.first_name %></h1>
+<div class="show-container  bookmarks-background" style="scroll-behavior: auto">
+  <div class="index-container bookmark-blur">
+
+  <%= render "posts/sidebar" %>
+
+  <div class="results-container" data-select-category-target="results">
+    <div class="row justify-content-center">
+      <div class="col-sm-8">
+          <h1 style='font-size: 37px; margin-top: 29px; margin-bottom: 20px;'><%=  User.find(@profile.user_id).first_name %> <%=User.find(@profile.user_id).last_name %></h1>
+          <% User.find(@profile.user_id).posts.sort_by { |post| post.votes.count }.reverse.each do |post| %>
+            <%= link_to post_path(post), class: "text-decoration-none content-card-width"  do %>
+            <%= render "posts/post_container", post: post %>
+            <% end %>
+          <% end %>
+      </div>
+    </div>
+  </div>
+
+  <%= render "posts/author_infos" %>
+</div>

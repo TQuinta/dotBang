@@ -1369,7 +1369,7 @@ puts "---------------------"
 
 User.all.each do |user|
   if user == User.first
-    puts "Not for Charlie"
+    puts "Charlie cannot vote on his post"
   else
     vote = Vote.new(
       user: user,
@@ -1377,8 +1377,154 @@ User.all.each do |user|
     )
     vote.save!
     puts "#{user.first_name} has just voted"
+
+    vote = Vote.new(
+      user: user,
+      post: Post.find_by(title: "How I built my first React Native app for my first freelance client")
+    )
+    vote.save!
+    puts "#{user.first_name} has just voted"
   end
 end
+
+User.all.first(9).each do |user|
+  title = "All the fundamental React.js concepts."
+  post = Post.find_by(title: title)
+  if user == post.user
+    puts "#{user.first_name} cannot vote on their post"
+  else
+    vote = Vote.new(
+      user: user,
+      post: post
+    )
+    vote.save!
+    puts "#{user.first_name} has just voted"
+  end
+end
+
+User.all.first(5).each do |user|
+  title = "React.js file structures."
+  post = Post.find_by(title: title)
+  if user == post.user
+    puts "#{user.first_name} cannot vote on their post"
+  else
+    vote = Vote.new(
+      user: user,
+      post: post
+    )
+    vote.save!
+    puts "#{user.first_name} has just voted"
+  end
+end
+
+User.all.first(3).each do |user|
+  title = "Creating Reusable Components in React: Render Props."
+  post = Post.find_by(title: title)
+  if user == post.user
+    puts "#{user.first_name} cannot vote on their post"
+  else
+    vote = Vote.new(
+      user: user,
+      post: post
+    )
+    vote.save!
+    puts "#{user.first_name} has just voted"
+  end
+end
+
+User.all.first(6).each do |user|
+  title = "Make a Rich Text Editor with JavaScript in 5 Minutes."
+  post = Post.find_by(title: title)
+  if user == post.user
+    puts "#{user.first_name} cannot vote on their post"
+  else
+    vote = Vote.new(
+      user: user,
+      post: post
+    )
+    vote.save!
+    puts "#{user.first_name} has just voted"
+  end
+end
+
+User.all.first(4).each do |user|
+  title = "How to Become a Web3 Frontend Developer."
+  post = Post.find_by(title: title)
+  if user == post.user
+    puts "#{user.first_name} cannot vote on their post"
+  else
+    vote = Vote.new(
+      user: user,
+      post: post
+    )
+    vote.save!
+    puts "#{user.first_name} has just voted"
+  end
+end
+
+User.all.first(3).each do |user|
+  title = "Strategic Frontend II: Technology choice matters a lot."
+  post = Post.find_by(title: title)
+  if user == post.user
+    puts "#{user.first_name} cannot vote on their post"
+  else
+    vote = Vote.new(
+      user: user,
+      post: post
+    )
+    vote.save!
+    puts "#{user.first_name} has just voted"
+  end
+end
+
+puts "---------------------"
+puts "Adding more skills due to popular demand"
+puts "---------------------"
+
+skill = Skill.new(name: "HTML")
+skill.save!
+puts "#{skill.name} created"
+
+skill = Skill.new(name: "C++")
+skill.save!
+puts "#{skill.name} created"
+
+skill = Skill.new(name: "Python")
+skill.save!
+puts "#{skill.name} created"
+
+skill = Skill.new(name: "Node")
+skill.save!
+puts "#{skill.name} created"
+
+puts "---------------------"
+puts "Adding Olwyn Hogan"
+puts "---------------------"
+
+user = User.new(
+  first_name: "Olwyn",
+  last_name: "Hogan",
+  email: "olwyn@mail.com",
+  username: "olwynhogan",
+  password: "123456"
+)
+user.save!
+puts "#{user.first_name} created"
+
+profile = Profile.new(
+  avatar_url: "https://avatars.githubusercontent.com/u/101358936?v=4",
+  user: user,
+  GitHub_url: "https://github.com/OlwynH",
+  LinkedIn_url: "https://www.linkedin.com/in/olwynhogan/",
+  description: "Career changer to become BEST DEVELOPER EVER",
+  credentials: "Le Wagon alumni",
+  years_of_experience: 0,
+  city: "Remote",
+  current_role: "Student"
+)
+
+profile.save!
+puts "Profile created for #{profile.user.first_name}"
 
 puts "---------------------"
 puts ""

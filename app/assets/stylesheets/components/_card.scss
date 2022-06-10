@@ -21,7 +21,6 @@
   height: 161px;
   display: flex;
   align-items: center;
-  -webkit-backdrop-filter: blur(1rem);
   transition: box-shadow 0.3s;
     /* box-shadow: #74b2e0 0px 0px 4px 0px; */
     /* transform: skew(-20deg); */
@@ -103,5 +102,4 @@ text-decoration: none;
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: -25px;
 }
