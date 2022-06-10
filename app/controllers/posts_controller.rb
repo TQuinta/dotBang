@@ -55,19 +55,19 @@ class PostsController < ApplicationController
   end
 
   def role?
-    params[:tag][:postableSkills].empty?
+    params[:tg][:postableSkills].empty?
   end
 
   def skill?
-    params[:tag][:postableRoles].empty?
+    params[:tg][:postableRoles].empty?
   end
 
   def set_skill
-    @postable = Skill.find(params[:tag][:postableSkills])
+    @postable = Skill.find(params[:tg][:postableSkills])
   end
 
   def set_role
-    @postable = Role.find(params[:tag][:postableRoles])
+    @postable = Role.find(params[:tg][:postableRoles])
   end
 
   def post_params
