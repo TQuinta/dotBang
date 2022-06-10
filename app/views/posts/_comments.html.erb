@@ -5,8 +5,6 @@
         <% @comments.sort_by { |comment| comment.created_at }.reverse.each do |comment| %>
         <%= render "comment", comment: comment %>
         <% end %>
-      <% else %>
-        <p><em>Be the first to leave a message!</em></p>
       <% end %>
     </div>
 </div>

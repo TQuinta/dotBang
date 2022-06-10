@@ -7,6 +7,11 @@ export default class extends Controller {
   static values = { commentID: Number }
   static targets = ["comments", 'form']
 
+  connect() {
+    console.log(this.commentsTarget);
+    console.log(this.formTarget)
+  }
+
   postComment(e) {
     e.preventDefault();
     fetch(this.formTarget.action, {
