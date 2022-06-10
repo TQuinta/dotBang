@@ -278,6 +278,42 @@ h3 {
   border-bottom: 4px solid #74b2e0;
   border-right: 4px solid #74b2e0;
 }
+
+//Signup page
+
+.header-container-signup {
+  background-image: url("yellow.png");
+  background-size: cover;
+  margin-top: 10%;
+
+}
+
+.title-signup-shadow-yellow {
+  background-color: #dab96880;
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 200;
+  font-size: 36px;
+  text-shadow: none;
+  color: black;
+  margin: 36px 0px;
+}
+
+.header-container-login {
+  background-image: url("blue.png");
+  background-size: cover;
+  margin-top: 10%;
+}
+
+.title-signup-shadow-blue {
+  background-color: #64819270;
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 200;
+  font-size: 36px;
+  text-shadow: none;
+  color: black;
+  margin: 36px 0px;
+}
+
 // @media screen and (max-height: 631px) {
 //   .skills-btn-small {
 //     position: absolute;
