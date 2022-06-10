@@ -928,7 +928,7 @@ puts "Now we create extra users and profiles"
 puts "---------------------"
 
 10.times do
-  first_name = Faker::Name.first_name
+  first_name = Faker::Name.unique.first_name
   last_name = Faker::Name.last_name
   user = User.new(
     first_name: first_name,
@@ -1364,118 +1364,164 @@ post.save!
 puts "created post - #{post.title}"
 
 puts "---------------------"
+puts "Adding some users to win the elections"
+puts "---------------------"
+
+100.times do |i|
+  user = User.new(
+    email: "#{i}@mail.com",
+    password: "123456",
+    first_name: "#{i}firstname",
+    last_name: "#{i}lastname",
+    username: "#{i}username"
+  )
+  user.save!
+end
+
+puts "---------------------"
+puts "The users are voting now ..."
+puts "---------------------"
+
+puts "---------------------"
 puts "Adding some votes"
 puts "---------------------"
 
-User.all.each do |user|
-  if user == User.first
-    puts "Charlie cannot vote on his post"
-  else
-    vote = Vote.new(
-      user: user,
-      post: Post.find_by(title: "How I landed a full stack developer job without a tech degree or work experience")
-    )
-    vote.save!
-    puts "#{user.first_name} has just voted"
+posts = Post.all.to_a
+react_post = posts.delete(Post.find_by_title("How I built my first React Native app for my first freelance client"))
 
+posts.each do |post|
+  users = User.all.to_a
+  users.delete(post.user)
+  users.sample(rand(30..70)).each do |user|
     vote = Vote.new(
-      user: user,
-      post: Post.find_by(title: "How I built my first React Native app for my first freelance client")
+      post: post,
+      user: user
     )
     vote.save!
-    puts "#{user.first_name} has just voted"
   end
 end
 
-User.all.first(9).each do |user|
-  title = "All the fundamental React.js concepts."
-  post = Post.find_by(title: title)
-  if user == post.user
-    puts "#{user.first_name} cannot vote on their post"
-  else
-    vote = Vote.new(
-      user: user,
-      post: post
-    )
-    vote.save!
-    puts "#{user.first_name} has just voted"
-  end
+User.first(83).each do |user|
+  vote = Vote.new(
+    post: react_post,
+    user: user
+  )
+  vote.save
 end
 
-User.all.first(5).each do |user|
-  title = "React.js file structures."
-  post = Post.find_by(title: title)
-  if user == post.user
-    puts "#{user.first_name} cannot vote on their post"
-  else
-    vote = Vote.new(
-      user: user,
-      post: post
-    )
-    vote.save!
-    puts "#{user.first_name} has just voted"
-  end
-end
+puts "---------------------"
+puts "We won the elections!!!"
+puts "---------------------"
 
-User.all.first(3).each do |user|
-  title = "Creating Reusable Components in React: Render Props."
-  post = Post.find_by(title: title)
-  if user == post.user
-    puts "#{user.first_name} cannot vote on their post"
-  else
-    vote = Vote.new(
-      user: user,
-      post: post
-    )
-    vote.save!
-    puts "#{user.first_name} has just voted"
-  end
-end
+# User.all.each do |user|
+#   if user == User.first
+#     puts "Charlie cannot vote on his post"
+#   else
+#     vote = Vote.new(
+#       user: user,
+#       post: Post.find_by(title: "How I landed a full stack developer job without a tech degree or work experience")
+#     )
+#     vote.save!
+#     puts "#{user.first_name} has just voted"
 
-User.all.first(6).each do |user|
-  title = "Make a Rich Text Editor with JavaScript in 5 Minutes."
-  post = Post.find_by(title: title)
-  if user == post.user
-    puts "#{user.first_name} cannot vote on their post"
-  else
-    vote = Vote.new(
-      user: user,
-      post: post
-    )
-    vote.save!
-    puts "#{user.first_name} has just voted"
-  end
-end
+#     vote = Vote.new(
+#       user: user,
+#       post: Post.find_by(title: "How I built my first React Native app for my first freelance client")
+#     )
+#     vote.save!
+#     puts "#{user.first_name} has just voted"
+#   end
+# end
 
-User.all.first(4).each do |user|
-  title = "How to Become a Web3 Frontend Developer."
-  post = Post.find_by(title: title)
-  if user == post.user
-    puts "#{user.first_name} cannot vote on their post"
-  else
-    vote = Vote.new(
-      user: user,
-      post: post
-    )
-    vote.save!
-    puts "#{user.first_name} has just voted"
-  end
-end
+# User.all.first(9).each do |user|
+#   title = "All the fundamental React.js concepts."
+#   post = Post.find_by(title: title)
+#   if user == post.user
+#     puts "#{user.first_name} cannot vote on their post"
+#   else
+#     vote = Vote.new(
+#       user: user,
+#       post: post
+#     )
+#     vote.save!
+#     puts "#{user.first_name} has just voted"
+#   end
+# end
 
-User.all.first(3).each do |user|
-  title = "Strategic Frontend II: Technology choice matters a lot."
-  post = Post.find_by(title: title)
-  if user == post.user
-    puts "#{user.first_name} cannot vote on their post"
-  else
-    vote = Vote.new(
-      user: user,
-      post: post
-    )
-    vote.save!
-    puts "#{user.first_name} has just voted"
-  end
-end
+# User.all.first(5).each do |user|
+#   title = "React.js file structures."
+#   post = Post.find_by(title: title)
+#   if user == post.user
+#     puts "#{user.first_name} cannot vote on their post"
+#   else
+#     vote = Vote.new(
+#       user: user,
+#       post: post
+#     )
+#     vote.save!
+#     puts "#{user.first_name} has just voted"
+#   end
+# end
+
+# User.all.first(3).each do |user|
+#   title = "Creating Reusable Components in React: Render Props."
+#   post = Post.find_by(title: title)
+#   if user == post.user
+#     puts "#{user.first_name} cannot vote on their post"
+#   else
+#     vote = Vote.new(
+#       user: user,
+#       post: post
+#     )
+#     vote.save!
+#     puts "#{user.first_name} has just voted"
+#   end
+# end
+
+# User.all.first(6).each do |user|
+#   title = "Make a Rich Text Editor with JavaScript in 5 Minutes."
+#   post = Post.find_by(title: title)
+#   if user == post.user
+#     puts "#{user.first_name} cannot vote on their post"
+#   else
+#     vote = Vote.new(
+#       user: user,
+#       post: post
+#     )
+#     vote.save!
+#     puts "#{user.first_name} has just voted"
+#   end
+# end
+
+# User.all.first(4).each do |user|
+#   title = "How to Become a Web3 Frontend Developer."
+#   post = Post.find_by(title: title)
+#   if user == post.user
+#     puts "#{user.first_name} cannot vote on their post"
+#   else
+#     vote = Vote.new(
+#       user: user,
+#       post: post
+#     )
+#     vote.save!
+#     puts "#{user.first_name} has just voted"
+#   end
+# end
+
+# User.all.first(3).each do |user|
+#   title = "Strategic Frontend II: Technology choice matters a lot."
+#   post = Post.find_by(title: title)
+#   if user == post.user
+#     puts "#{user.first_name} cannot vote on their post"
+#   else
+#     vote = Vote.new(
+#       user: user,
+#       post: post
+#     )
+#     vote.save!
+#     puts "#{user.first_name} has just voted"
+#   end
+# end
 
 puts "---------------------"
 puts "Adding more skills due to popular demand"
